@@ -1,0 +1,15 @@
+# Prevent PHP execution in this directory
+
+# Even if a PHP file is uploaded, Apache will not execute it
+
+<FilesMatch "\.(php|php3|php4|php5|php7|phtml|pl|py|jsp|asp|sh|cgi)$">
+Order allow,deny
+Deny from all
+</FilesMatch>
+
+# Only allow image files to be served
+
+<FilesMatch "\.(jpg|jpeg|png|webp|gif)$">
+Order deny,allow
+Allow from all
+</FilesMatch>

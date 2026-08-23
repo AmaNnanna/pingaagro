@@ -1,0 +1,147 @@
+/* ============================================================
+   BASE — Variables · Reset · Typography · Layout Utilities
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
+
+/* ── CSS Variables ─────────────────────────────────────────── */
+:root {
+    /* Brand Colours */
+    --green-dark:    #1B5C28;
+    --green-mid:     #2E8B45;
+    --green-light:   #E8F4EB;
+    --gold:          #C9A84C;
+    --gold-dark:     #9A7C2E;
+    --gold-light:    #FBF4E0;
+
+    /* Neutrals */
+    --white:         #FFFFFF;
+    --off-white:     #F7F9F5;
+    --border:        #DDE4DA;
+    --text-dark:     #1A1A1A;
+    --text-body:     #3D3D3D;
+    --text-muted:    #717171;
+    --overlay:       rgba(27, 92, 40, 0.85);
+
+    /* Typography */
+    --font-display:  'DM Serif Display', Georgia, serif;
+    --font-body:     'DM Sans', system-ui, sans-serif;
+
+    /* Type Scale */
+    --text-xs:       0.75rem;
+    --text-sm:       0.875rem;
+    --text-base:     1rem;
+    --text-md:       1.125rem;
+    --text-lg:       1.25rem;
+    --text-xl:       1.5rem;
+    --text-2xl:      1.875rem;
+    --text-3xl:      2.25rem;
+    --text-4xl:      3rem;
+    --text-5xl:      3.75rem;
+
+    /* Spacing */
+    --space-xs:      0.5rem;
+    --space-sm:      1rem;
+    --space-md:      1.5rem;
+    --space-lg:      2rem;
+    --space-xl:      3rem;
+    --space-2xl:     5rem;
+    --space-3xl:     7rem;
+
+    /* Layout */
+    --container:     1200px;
+    --radius-sm:     4px;
+    --radius-md:     8px;
+    --radius-lg:     16px;
+    --navbar-h:      76px;
+
+    /* Effects */
+    --transition:    all 0.25s ease;
+    --shadow-sm:     0 1px 3px rgba(0,0,0,0.08);
+    --shadow-md:     0 4px 16px rgba(0,0,0,0.10);
+    --shadow-lg:     0 8px 32px rgba(0,0,0,0.14);
+}
+
+/* ── Reset ────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    line-height: 1.7;
+    color: var(--text-body);
+    background: var(--white);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+img    { max-width: 100%; height: auto; display: block; }
+a      { text-decoration: none; color: inherit; transition: var(--transition); }
+ul, ol { list-style: none; }
+button { cursor: pointer; border: none; background: none; font-family: var(--font-body); }
+
+/* ── Layout Utilities ─────────────────────────────────────── */
+.container {
+    width: 100%;
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+}
+
+.section       { padding: var(--space-3xl) 0; }
+.section--sm   { padding: var(--space-2xl) 0; }
+.section--dark { background: var(--green-dark); color: var(--white); }
+.section--tint { background: var(--off-white); }
+
+/* ── Typography ───────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    line-height: 1.15;
+    color: var(--text-dark);
+    font-weight: 400;
+}
+
+h1 { font-size: clamp(var(--text-3xl), 5vw,   var(--text-5xl)); }
+h2 { font-size: clamp(var(--text-2xl), 3.5vw, var(--text-4xl)); }
+h3 { font-size: clamp(var(--text-xl),  2.5vw, var(--text-2xl)); }
+h4 { font-size: var(--text-lg); }
+
+.eyebrow {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: var(--space-sm);
+}
+
+.eyebrow--light { color: var(--gold); opacity: 0.9; }
+
+.text-white  { color: var(--white); }
+.text-gold   { color: var(--gold); }
+.text-green  { color: var(--green-dark); }
+.text-muted  { color: var(--text-muted); }
+
+.section-header         { margin-bottom: var(--space-2xl); }
+.section-header--center {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto var(--space-2xl);
+}
+.section-header p       { font-size: var(--text-md); color: var(--text-muted); margin-top: var(--space-sm); line-height: 1.8; }
+.section-header--dark p { color: rgba(255,255,255,0.72); }
+
+.gold-rule         { display: block; width: 48px; height: 3px; background: var(--gold); margin-top: var(--space-sm); border-radius: 2px; }
+.gold-rule--center { margin-left: auto; margin-right: auto; }
+
+/* ── Responsive Base ─────────────────────────────────────── */
+@media (max-width: 768px) {
+    :root {
+        --space-3xl: 4rem;
+        --space-2xl: 3rem;
+    }
+}

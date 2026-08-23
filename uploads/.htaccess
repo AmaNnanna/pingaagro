@@ -1,0 +1,8 @@
+# This folder is above the web root and not directly accessible.
+
+# This .htaccess is a belt-and-suspenders safeguard.
+
+<FilesMatch ".\*">
+Order allow,deny
+Deny from all
+</FilesMatch>

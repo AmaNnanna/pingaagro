@@ -39,6 +39,7 @@
             <?php else: ?>
 
                 <form action="<?= URLROOT ?>/admin/login" method="POST">
+                    <?= Security::csrfField() ?>
                     <div class="form-field">
                         <label for="email">Email Address</label>
                         <input type="email" id="email" name="email"

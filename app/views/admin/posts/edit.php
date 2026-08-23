@@ -21,6 +21,7 @@
     <?php endif; ?>
 
     <form action="<?= URLROOT ?>/admin/editpost/<?= $post->id ?>" method="POST" id="postForm">
+        <?= Security::csrfField() ?>
 
         <div class="admin-form-grid">
 

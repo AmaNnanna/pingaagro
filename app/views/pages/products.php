@@ -6,8 +6,10 @@
             <span>›</span>
             <span>Our Products</span>
         </div>
-        <h1>Premium Poultry.<br><em style="font-style:italic;color:var(--gold);">Uncompromising Quality.</em></h1>
-        <p>Three core product lines. One unwavering standard. Everything we produce carries the Pinga name — and that means something.</p>
+        <h1>What We Produce.<br>
+            <em style="font-style:italic;color:var(--gold);">Quality at Every Stage.</em>
+        </h1>
+        <p>From fresh table eggs to day-old chicks and quality feeds — five product lines, one standard of excellence.</p>
     </div>
 </section>
 
@@ -31,7 +33,6 @@
                 </div>
             </div>
             <div class="product-layout__content">
-                <span class="eyebrow">Product 01</span>
                 <h2>Eggs</h2>
                 <span class="gold-rule"></span>
                 <p style="margin-top:1.5rem;">Our eggs are produced by healthy, well-nourished layer hens raised in carefully managed environments. The result is a consistently fresh, nutritious egg with the flavour and quality that comes from doing things right — not fast.</p>
@@ -48,28 +49,77 @@
     </div>
 </section>
 
-<!-- BROILERS -->
-<section class="section section--tint" id="broilers">
+<!-- POINT OF LAY -->
+<section class="section section--tint" id="point-of-lay">
     <div class="container">
         <div class="product-layout product-layout--reverse reveal">
+            <div class="product-layout__image">
+                <div class="product-layout__img-placeholder">
+                    <img src="<?= URLROOT ?>/images/point-of-lay.jpg" alt="Pinga Agro Investment Limited">
+                </div>
+            </div>
             <div class="product-layout__content">
-                <span class="eyebrow">Product 02</span>
-                <h2>Broilers</h2>
+                <h2>Point of Lay</h2>
                 <span class="gold-rule"></span>
-                <p style="margin-top:1.5rem;">Our broiler chickens are raised with best-practice management, quality feed, and rigorous health monitoring from day-old chick to market weight. The result is a bird with superior flavour, texture, and nutritional value.</p>
-                <p style="margin-top:1rem;">We supply live broilers and can facilitate processed whole birds and cut parts depending on buyer requirements and volume.</p>
+                <p style="margin-top:1.5rem;">Our point of lay services provide comprehensive support for poultry producers, ensuring optimal performance and productivity throughout the laying cycle.</p>
+                <p style="margin-top:1rem;">From breeding stock selection to management strategies, we offer tailored solutions to meet the unique needs of each operation.</p>
                 <ul class="product-features">
-                    <li>✓ Raised on quality, balanced feed</li>
+                    <li>✓ Customised breeding programs</li>
                     <li>✓ Monitored health and biosecurity protocols</li>
                     <li>✓ Available live or processed</li>
                     <li>✓ Suitable for households, restaurants, and wholesale</li>
                 </ul>
-                <a href="<?= URLROOT ?>/contact" class="btn btn-outline-green" style="margin-top:1.5rem;">Enquire About Broilers</a>
+                <a href="<?= URLROOT ?>/contact" class="btn btn-outline-green" style="margin-top:1.5rem;">Enquire About Point of Lay</a>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- DAY OLD CHICKS -->
+<section class="section section" id="doc">
+    <div class="container">
+        <div class="product-layout reveal">
             <div class="product-layout__image">
-                <div class="product-layout__img-placeholder">
-                    <img src="<?= URLROOT ?>/images/broilers.jpg" alt="Pinga Agro Investment Limited">
-                </div>
+                <div class="product-layout__img-placeholder">🐤</div>
+            </div>
+            <div class="product-layout__content">
+                <h2>Day Old Chicks</h2>
+                <span class="gold-rule"></span>
+                <p style="margin-top:1.5rem;">
+                    Our day old pullet chicks are sourced from reputable hatcheries and handled with the utmost care from arrival. Each chick is vaccinated and health-checked before leaving our facility, giving your flock the strongest possible start.
+                </p>
+                <ul class="product-features">
+                    <li>✓ Pullet (female) chicks for layer production</li>
+                    <li>✓ Vaccinated from day one</li>
+                    <li>✓ Sourced from certified hatcheries</li>
+                    <li>✓ Available subject to seasonal scheduling</li>
+                </ul>
+                <a href="<?= URLROOT ?>/contact" class="btn btn-outline-green" style="margin-top:1.5rem;">Enquire About DOC</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FEEDS DISTRIBUTION -->
+<section class="section section--tint" id="feeds">
+    <div class="container">
+        <div class="product-layout product-layout--reverse reveal">
+            <div class="product-layout__image">
+                <div class="product-layout__img-placeholder">🌾</div>
+            </div>
+            <div class="product-layout__content">
+                <h2>Feeds Distribution</h2>
+                <span class="gold-rule"></span>
+                <p style="margin-top:1.5rem;">
+                    Access to quality, balanced poultry feed is one of the biggest challenges facing small and medium-scale farmers in Nigeria. Pinga Agro distributes trusted feed brands to help farmers maintain consistent bird health and production performance.
+                </p>
+                <ul class="product-features">
+                    <li>✓ Quality poultry feed from trusted mills</li>
+                    <li>✓ Starter, grower, and layer formulations</li>
+                    <li>✓ Available for farm pickup or delivery</li>
+                    <li>✓ Expert feeding advice on request</li>
+                </ul>
+                <a href="<?= URLROOT ?>/contact" class="btn btn-outline-green" style="margin-top:1.5rem;">Enquire About Feeds</a>
             </div>
         </div>
     </div>
@@ -85,7 +135,6 @@
                 </div>
             </div>
             <div class="product-layout__content">
-                <span class="eyebrow">Product 03</span>
                 <h2>Layers</h2>
                 <span class="gold-rule"></span>
                 <p style="margin-top:1.5rem;">Our layer birds are productive, healthy, and reared with the expertise of a team that understands the full poultry value chain. Whether you are setting up a small-scale farm or expanding an existing operation, our layers are a reliable foundation.</p>

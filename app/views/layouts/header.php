@@ -22,8 +22,11 @@
     <?php if ($currentUrl === ''): ?>
         <link rel="stylesheet" href="<?= URLROOT ?>/css/home.css">
 
-    <?php elseif (in_array($currentUrl, ['about', 'products']) || strpos($currentUrl, 'products') === 0): ?>
-        <link rel="stylesheet" href="<?= URLROOT ?>/css/pages.css">
+    <?php elseif ($currentUrl === 'about'): ?>
+        <link rel="stylesheet" href="<?= URLROOT ?>/css/about.css">
+
+    <?php elseif (strpos($currentUrl, 'products') === 0): ?>
+        <link rel="stylesheet" href="<?= URLROOT ?>/css/products.css">
 
     <?php elseif (strpos($currentUrl, 'insights') === 0): ?>
         <link rel="stylesheet" href="<?= URLROOT ?>/css/insights.css">

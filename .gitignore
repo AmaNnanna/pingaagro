@@ -1,0 +1,29 @@
+# Environment and local configuration
+.env
+.env.*
+!.env.example
+
+# Runtime uploads and generated files
+/uploads/*
+!/uploads/.gitkeep
+
+# PHP dependencies and tooling
+/vendor/
+.phpunit.result.cache
+.php-cs-fixer.cache
+
+# Frontend dependencies and build output
+/node_modules/
+
+# Logs and local databases
+*.log
+*.sqlite
+*.sqlite3
+
+# IDE and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+*.swo

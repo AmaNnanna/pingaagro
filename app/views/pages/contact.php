@@ -29,10 +29,8 @@
                     <div class="form-success">
                         <span class="form-success__icon">✅</span>
                         <h3>Message Received!</h3>
-                        <p>Thank you for reaching out. A member of our team will get back to you within 24–48 hours.</p>
-                        <a href="<?= URLROOT ?>/" class="btn btn-green" style="margin-top:1.5rem;">
-                            Back to Home
-                        </a>
+                        <p>Thank you for contacting us. We appreciate your patronage and support. We will contact you as soon as possible within the next 24 hours.</p>
+                        <a href="<?= URLROOT ?>/" class="btn btn-green" style="margin-top:1.5rem;">Back to Home</a>
                     </div>
 
                 <?php else: ?>
@@ -51,8 +49,8 @@
                             <div class="form-group <?= !empty($errors['fullname']) ? 'form-group--error' : '' ?>">
                                 <label for="fullname">Full Name <span class="required">*</span></label>
                                 <input type="text" id="fullname" name="fullname"
-                                       placeholder="Your full name"
-                                       value="<?= htmlspecialchars($old['fullname'] ?? '') ?>">
+                                    placeholder="Your full name"
+                                    value="<?= htmlspecialchars($old['fullname'] ?? '') ?>">
                                 <?php if (!empty($errors['fullname'])): ?>
                                     <span class="form-error"><?= htmlspecialchars($errors['fullname']) ?></span>
                                 <?php endif; ?>
@@ -60,8 +58,8 @@
                             <div class="form-group <?= !empty($errors['email']) ? 'form-group--error' : '' ?>">
                                 <label for="email">Email Address <span class="required">*</span></label>
                                 <input type="email" id="email" name="email"
-                                       placeholder="your@email.com"
-                                       value="<?= htmlspecialchars($old['email'] ?? '') ?>">
+                                    placeholder="your@email.com"
+                                    value="<?= htmlspecialchars($old['email'] ?? '') ?>">
                                 <?php if (!empty($errors['email'])): ?>
                                     <span class="form-error"><?= htmlspecialchars($errors['email']) ?></span>
                                 <?php endif; ?>
@@ -72,8 +70,8 @@
                             <div class="form-group">
                                 <label for="phone">Phone Number</label>
                                 <input type="tel" id="phone" name="phone"
-                                       placeholder="+234 000 000 0000"
-                                       value="<?= htmlspecialchars($old['phone'] ?? '') ?>">
+                                    placeholder="+234 000 000 0000"
+                                    value="<?= htmlspecialchars($old['phone'] ?? '') ?>">
                             </div>
                             <div class="form-group <?= !empty($errors['subject']) ? 'form-group--error' : '' ?>">
                                 <label for="subject">I am reaching out as a… <span class="required">*</span></label>
@@ -104,14 +102,14 @@
                         <div class="form-group <?= !empty($errors['message']) ? 'form-group--error' : '' ?>">
                             <label for="message">Your Message <span class="required">*</span></label>
                             <textarea id="message" name="message" rows="6"
-                                      placeholder="Tell us what's on your mind…"><?= htmlspecialchars($old['message'] ?? '') ?></textarea>
+                                placeholder="Tell us what's on your mind…"><?= htmlspecialchars($old['message'] ?? '') ?></textarea>
                             <?php if (!empty($errors['message'])): ?>
                                 <span class="form-error"><?= htmlspecialchars($errors['message']) ?></span>
                             <?php endif; ?>
                         </div>
 
                         <button type="submit" class="btn btn-primary"
-                                style="width:100%;justify-content:center;padding:1rem;">
+                            style="width:100%;justify-content:center;padding:1rem;">
                             Send Message
                         </button>
 
@@ -129,15 +127,22 @@
                     <div class="contact-info__item">
                         <div class="contact-info__icon">📍</div>
                         <div>
-                            <h4>Location</h4>
-                            <p>Oji River LGA,<br>Enugu State, Nigeria</p>
+                            <h4>Oji River Farm</h4>
+                            <p>Mile 2 Ahani, Oji River LGA,<br>Enugu State, Nigeria</p>
+                        </div>
+                    </div>
+                    <div class="contact-info__item">
+                        <div class="contact-info__icon">📍</div>
+                        <div>
+                            <h4>Ufuma Farm</h4>
+                            <p>Akpugoeze-Ufuma Road,<br>Ufuma, Anambra State, Nigeria</p>
                         </div>
                     </div>
                     <div class="contact-info__item">
                         <div class="contact-info__icon">📞</div>
                         <div>
                             <h4>Phone</h4>
-                            <p>+234 000 000 0000</p>
+                            <p>Contact us by email for now</p>
                         </div>
                     </div>
                     <div class="contact-info__item">
@@ -147,27 +152,28 @@
                             <p>info@pingaagro.com</p>
                         </div>
                     </div>
-                    <div class="contact-info__item">
-                        <div class="contact-info__icon">💬</div>
-                        <div>
-                            <h4>WhatsApp</h4>
-                            <p>+234 000 000 0000</p>
-                        </div>
-                    </div>
                 </div>
-
-                <div class="contact-response">
-                    <h4 style="color:var(--green-dark);margin-bottom:0.75rem;">When to Expect a Reply</h4>
-                    <ul class="response-list">
-                        <li><span class="dot dot--green"></span> General enquiries — within 24 hours</li>
-                        <li><span class="dot dot--gold"></span> Investment discussions — within 48 hours</li>
-                        <li><span class="dot dot--green"></span> Product enquiries — within 12 hours</li>
-                        <li><span class="dot dot--gold"></span> Government / Policy — within 48 hours</li>
-                    </ul>
+                <div class="contact-info__item">
+                    <div class="contact-info__icon">💬</div>
+                    <div>
+                        <h4>WhatsApp</h4>
+                        <p>+234 000 000 0000</p>
+                    </div>
                 </div>
             </div>
 
+            <div class="contact-response">
+                <h4 style="color:var(--green-dark);margin-bottom:0.75rem;">When to Expect a Reply</h4>
+                <ul class="response-list">
+                    <li><span class="dot dot--green"></span> General enquiries — within 24 hours</li>
+                    <li><span class="dot dot--gold"></span> Investment discussions — within 48 hours</li>
+                    <li><span class="dot dot--green"></span> Product enquiries — within 12 hours</li>
+                    <li><span class="dot dot--gold"></span> Government / Policy — within 48 hours</li>
+                </ul>
+            </div>
         </div>
+
+    </div>
     </div>
 </section>
 

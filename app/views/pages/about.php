@@ -6,8 +6,10 @@
             <span>›</span>
             <span>About Us</span>
         </div>
-        <h1>Built on Conviction.<br>Driven by <em style="font-style:italic;color:var(--gold);">Quality.</em></h1>
-        <p>Since 2016, Pinga Agro Investment Limited has been quietly building something meaningful in Oji River, Enugu State — and the world is starting to pay attention.</p>
+        <h1>Built to Feed Africa,<br>
+            <em style="font-style:italic;color:var(--gold);">Starting Here.</em>
+        </h1>
+        <p>Pinga Agro Investment Limited — formerly EL-Kurios Farms Ltd — has been contributing to Nigeria's food security since March 2016, with farms across Enugu and Anambra States.</p>
     </div>
 </section>
 
@@ -19,9 +21,15 @@
                 <span class="eyebrow">Our Story</span>
                 <h2>From a Vision to a Value Chain</h2>
                 <span class="gold-rule"></span>
-                <p style="margin-top:1.5rem;">Pinga Agro Investment Limited was incorporated in March 2016 with a founding conviction: that Nigerian poultry farming could be done with world-class quality, genuine business discipline, and a real commitment to the communities it serves.</p>
-                <p style="margin-top:1rem;">What began as a farm has grown into something more significant — an authority in the poultry value chain, a resource for farmers across the region, and a credible voice in the national conversation about agricultural development and investment.</p>
-                <p style="margin-top:1rem;">Today, operating from our base in Oji River LGA, Enugu State, we produce premium eggs, broilers, and layers while simultaneously running community programmes, engaging with government at multiple levels, and preparing for the next chapter of growth.</p>
+                <p style="margin-top:1.5rem;">
+                    Pinga Agro Investment Limited, formerly known as EL-Kurios Farms Ltd, is a private company limited by shares. Established in March 2016 (RC 1322122), the company was formed to operate in the livestock sector and its associated value chain.
+                </p>
+                <p style="margin-top:1rem;">
+                    Today, our poultry layer farms operate in two locations — Oji River LGA, Enugu State, and Ufuma, Anambra State — where we produce table eggs and a range of poultry products for customers across the region.
+                </p>
+                <p style="margin-top:1rem;">
+                    We are highly subscribed to the United Nations Sustainable Development Goals — particularly Zero Hunger, No Poverty, and Decent Work and Economic Growth — and we see our business as a direct vehicle for achieving these goals across Africa.
+                </p>
             </div>
             <div class="about-strip__image reveal">
                 <!-- Replace with actual farm image -->
@@ -45,104 +53,226 @@
             <div class="mv-card reveal">
                 <div class="mv-card__icon">🎯</div>
                 <h3>Our Mission</h3>
-                <p>To contribute to the quality of life of people through the provision of quality agricultural produce, the creation of sustainable livelihoods, and the development of the communities we serve.</p>
+                <p>To sustainably improve food security and help reduce poverty across Africa.</p>
             </div>
             <div class="mv-card mv-card--gold reveal">
                 <div class="mv-card__icon">🌍</div>
                 <h3>Our Vision</h3>
-                <p>To be among the top 10 agribusinesses in Africa — recognised for our quality, our impact, and our role in transforming Nigeria's poultry industry into a globally competitive sector.</p>
+                <p>To be an International Agri-business company providing quality foods using best practices and contributing to reducing poverty in Africa.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- VALUES (RICET) -->
+<!-- VALUES (RICCET) -->
 <section class="section">
     <div class="container">
         <div class="section-header--center reveal">
             <span class="eyebrow">Our Values</span>
-            <h2>The RICET Principles</h2>
+            <h2>The RICCET Principles</h2>
             <span class="gold-rule gold-rule--center"></span>
-            <p>Five values that govern everything we do — from how we raise our birds to how we engage our communities.</p>
+            <p>Six values that govern everything we do — from how we raise our birds to how we serve our customers and communities.</p>
         </div>
         <div class="values-grid">
             <div class="value-card reveal">
                 <div class="value-card__letter">R</div>
                 <h4>Respect</h4>
-                <p>We treat every person — staff, customer, farmer, or community member — with dignity and genuine consideration.</p>
+                <p>We build our relationships with customers, employees, suppliers, and one another on mutual respect.</p>
             </div>
             <div class="value-card reveal">
                 <div class="value-card__letter">I</div>
                 <h4>Integrity</h4>
-                <p>We do what we say, say what we mean, and hold ourselves to the highest standards of honesty in every transaction and relationship.</p>
+                <p>We conduct all our dealings with integrity, and this commitment is reflected in our products.</p>
+            </div>
+            <div class="value-card reveal">
+                <div class="value-card__letter">C</div>
+                <h4>Customer Centric</h4>
+                <p>Our customers are central to our business, and we strive to exceed their expectations in both quality and service.</p>
             </div>
             <div class="value-card reveal">
                 <div class="value-card__letter">C</div>
                 <h4>Care</h4>
-                <p>We care deeply — about our birds, our people, our community, and the long-term health of the agricultural sector we are part of.</p>
+                <p>We demonstrate care in our relationships with customers, employees, the environment, our community, and our work.</p>
             </div>
             <div class="value-card reveal">
                 <div class="value-card__letter">E</div>
                 <h4>Excellence</h4>
-                <p>We set high standards and pursue them relentlessly — because our name is another word for quality, and we intend to keep it that way.</p>
+                <p>We will continue to strive for excellence in all we do because customer satisfaction drives loyalty and repeat business.</p>
             </div>
             <div class="value-card reveal">
                 <div class="value-card__letter">T</div>
                 <h4>Teamwork</h4>
-                <p>We believe that the best outcomes emerge when talented, committed people work together with shared purpose and mutual respect.</p>
+                <p>We believe success is achieved through collaboration.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- MEMBERSHIPS -->
+<section class="section section--tint">
+    <div class="container">
+        <div class="section-header--center reveal">
+            <span class="eyebrow">Industry Standing</span>
+            <h2>Our Memberships</h2>
+            <span class="gold-rule gold-rule--center"></span>
+        </div>
+        <div class="memberships-grid">
+            <div class="membership-card reveal">
+                <div class="membership-card__icon">🏛️</div>
+                <h4>Enugu Chamber of Commerce</h4>
+                <p>Industry, Mines and Agriculture (ECCIMA)</p>
+            </div>
+            <div class="membership-card reveal">
+                <div class="membership-card__icon">🌍</div>
+                <h4>Nigeria Netherlands Chamber of Commerce</h4>
+                <p>International trade and bilateral commerce</p>
+            </div>
+            <div class="membership-card reveal">
+                <div class="membership-card__icon">🐔</div>
+                <h4>Poultry Association of Nigeria</h4>
+                <p>Nigeria's foremost poultry industry body</p>
             </div>
         </div>
     </div>
 </section>
 
 <!-- LEADERSHIP -->
-<section class="section section--tint">
+<section class="section section--dark">
     <div class="container">
         <div class="section-header--center reveal">
             <span class="eyebrow">Our People</span>
             <h2>The Team Behind the Farm</h2>
             <span class="gold-rule gold-rule--center"></span>
-            <p>Pinga Agro is powered by experienced, passionate people who believe in what they're building.</p>
+            <p>Pinga Agro Investment Limited is built on the expertise, passion, and commitment of people who believe deeply in what they are building.</p>
         </div>
+
         <div class="team-grid">
-            <!-- Repeat this card for each team member. Replace placeholders with real data. -->
+
+            <!-- Director 1 -->
             <div class="team-card reveal">
                 <div class="team-card__photo">
-                    <!-- Replace with: <img src="<?= URLROOT ?>/images/team/name.jpg" alt="Full Name"> -->
+                    <!-- Replace placeholder with:
+                    <img src="<?= URLROOT ?>/images/team/ifechukwu-anajekwu.jpg"
+                         alt="Ifechukwu Gabriel Anajekwu"> -->
                     <div class="team-card__photo-placeholder">👤</div>
                 </div>
                 <div class="team-card__info">
-                    <h4>Full Name</h4>
-                    <span class="team-card__role">Managing Director</span>
-                    <p>A brief professional biography of this team member goes here — their background, expertise, and role at Pinga Agro.</p>
+                    <h4>Ifechukwu Gabriel Anajekwu</h4>
+                    <span class="team-card__role">FCA, MBA, BSc — Founder & Managing Director</span>
+                    <p>A Fellow of the Institute of Chartered Accountants of Nigeria with an MBA from the University of Liverpool and a BSc in Economics from the University of Benin. Pastor Anajekwu brings over 24 years of banking experience across operations, corporate banking, and senior management, retiring as a Deputy General Manager. A Stanford Seed Transformation Program participant, he now channels his expertise into building Pinga Agro into a world-class agri-business.</p>
                 </div>
             </div>
+
+            <!-- Director 2 -->
             <div class="team-card reveal">
                 <div class="team-card__photo">
+                    <img src="<?= URLROOT ?>/images/team/ugochi-anajekwu.jpg"
+                        alt="Ugochi Anajekwu">
                     <div class="team-card__photo-placeholder">👤</div>
                 </div>
                 <div class="team-card__info">
-                    <h4>Full Name</h4>
-                    <span class="team-card__role">Operations Manager</span>
-                    <p>A brief professional biography of this team member goes here — their background, expertise, and role at Pinga Agro.</p>
+                    <h4>Ugochi Anajekwu</h4>
+                    <span class="team-card__role">FCA, MBA — Director, Finance & Administration</span>
+                    <p>A Fellow of the Institute of Chartered Accountants of Nigeria with an MBA from the University of Calabar. Ugochi brings extensive experience in financial management across international development organisations, including USAID/CDC-funded healthcare projects and UK DFID programmes. As Director of Finance and Administration, she ensures Pinga Agro's resources are managed with the rigour and transparency that underpin the company's long-term growth.</p>
                 </div>
             </div>
+
+            <!-- Management 1 -->
             <div class="team-card reveal">
                 <div class="team-card__photo">
+                    <img src="<?= URLROOT ?>/images/team/stanley-ibemgbo.jpg"
+                        alt="Stanley Ibemgbo">
                     <div class="team-card__photo-placeholder">👤</div>
                 </div>
                 <div class="team-card__info">
-                    <h4>Full Name</h4>
-                    <span class="team-card__role">Farm Manager</span>
-                    <p>A brief professional biography of this team member goes here — their background, expertise, and role at Pinga Agro.</p>
+                    <h4>Stanley Ibemgbo</h4>
+                    <span class="team-card__role">FCA — General Manager & Chief Operating Officer</span>
+                    <p>A Fellow of the Institute of Chartered Accountants of Nigeria and holder of the SEC SSA (Nigeria) Certificate in Poultry Production and Management. Stanley brings a diverse career spanning banking, telecommunications, and hospitality — a broad management foundation he now applies to driving operational excellence across Pinga Agro's two farm locations. His passion for poultry production makes him a committed steward of the company's quality standards.</p>
                 </div>
+            </div>
+
+            <!-- Management 2 -->
+            <div class="team-card reveal">
+                <div class="team-card__photo">
+                    <img src="<?= URLROOT ?>/images/team/martin-ugochukwu.jpg"
+                        alt="Anajekwu Martin Ugochukwu">
+                    <div class="team-card__photo-placeholder">👤</div>
+                </div>
+                <div class="team-card__info">
+                    <h4>Anajekwu Martin Ugochukwu</h4>
+                    <span class="team-card__role">Assistant Farm Manager — Oji River Farm</span>
+                    <p>A dedicated poultry production technician with 8 years of hands-on experience in poultry layer management. Martin has built deep practical expertise in the day-to-day management of layer flocks — from rearing and feeding to health monitoring and production optimisation. His commitment to the Pinga standard and intimate knowledge of the Oji River farm operations make him a vital part of the company's operational backbone.</p>
+                </div>
+            </div>
+
+            <!-- Management 3 -->
+            <div class="team-card reveal">
+                <div class="team-card__photo">
+                    <img src="<?= URLROOT ?>/images/team/tijani-yusuf.jpg"
+                        alt="Tijani Yusuf Ahmad">
+                </div>
+                <div class="team-card__info">
+                    <h4>Tijani Yusuf Ahmad</h4>
+                    <span class="team-card__role">PGD Animal Science — Farm Manager, Ufuma Farm</span>
+                    <p>A Post Graduate Diploma holder in Animal Science from Ahmadu Bello University, Zaria, Tijani brings over 20 years of deep, hands-on experience in Nigeria's poultry industry. His expertise spans layer production, farm operations management, and cage system installation — a technical skill that makes him particularly valuable in building and optimising production infrastructure. As Farm Manager at Pinga Agro's Ufuma facility in Anambra State, he ensures the farm operates at peak performance every single day.</p>
+                </div>
+            </div>
+
+        </div><!-- /.team-grid -->
+
+        <!-- Note: remaining management team members will be added as profiles are received -->
+
+    </div>
+</section>
+
+<!-- SDG COMMITMENTS -->
+<section class="section section--tint">
+    <div class="container">
+        <div class="section-header--center reveal">
+            <span class="eyebrow">Global Commitment</span>
+            <h2>Sustainable Development Goals</h2>
+            <span class="gold-rule gold-rule--center"></span>
+            <p>Pinga Agro is highly subscribed to the United Nations Sustainable Development Goals. Our operations directly contribute to the following:</p>
+        </div>
+        <div class="sdg-grid reveal">
+            <div class="sdg-item">
+                <span class="sdg-num">1</span>
+                <span>No Poverty</span>
+            </div>
+            <div class="sdg-item">
+                <span class="sdg-num">2</span>
+                <span>Zero Hunger</span>
+            </div>
+            <div class="sdg-item">
+                <span class="sdg-num">3</span>
+                <span>Good Health & Well-Being</span>
+            </div>
+            <div class="sdg-item">
+                <span class="sdg-num">4</span>
+                <span>Quality Education</span>
+            </div>
+            <div class="sdg-item">
+                <span class="sdg-num">5</span>
+                <span>Gender Equality</span>
+            </div>
+            <div class="sdg-item">
+                <span class="sdg-num">6</span>
+                <span>Clean Water & Sanitation</span>
+            </div>
+            <div class="sdg-item">
+                <span class="sdg-num">7</span>
+                <span>Affordable & Clean Energy</span>
+            </div>
+            <div class="sdg-item">
+                <span class="sdg-num">8</span>
+                <span>Decent Work & Economic Growth</span>
             </div>
         </div>
     </div>
 </section>
 
-<!-- VIDEO SECTION -->
-<section class="section section--tint">
+<!--  VIDEO SECTION -->
+<section class="section section">
     <div class="container">
         <div class="video-section">
             <div class="video-section__content reveal">
@@ -154,14 +284,9 @@
                 </p>
             </div>
             <div class="video-section__player reveal">
-                <!-- 
-                    HOW TO USE:
-                    Replace the src below with your YouTube embed URL.
-                    Example: https://www.youtube.com/embed/YOUR_VIDEO_ID
-                    The placeholder below shows until a real video is added.
-                -->
+                
                 <?php
-                $youtubeEmbedUrl = YOUTUBE_EMBED_URL; // Add YouTube embed URL here when ready
+                $youtubeEmbedUrl = YOUTUBE_EMBED_URL;
                 ?>
                 <?php if ($youtubeEmbedUrl): ?>
                     <iframe

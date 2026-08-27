@@ -13,13 +13,18 @@ session_set_cookie_params([
     'samesite' => 'Strict',
 ]);
 
-// Keep these two — they are not covered by session_set_cookie_params
 ini_set('session.use_strict_mode',  1);
 ini_set('session.use_only_cookies', 1);
 
 // ── URLs ───────────────────────────────────────────────────
 define('URLROOT', 'http://pingaagro.test');
 define('SITENAME', 'Pinga Agro Investment Limited');
+define('RC_NUMBER',  'RC 1322122');
+define('PHONE',      ''); // awaiting from client
+define('EMAIL',      ''); // awaiting from client
+define('WHATSAPP',   ''); // awaiting from client
+define('ADDRESS_1',  'Mile 2 Ahani, Oji River LGA, Enugu State');
+define('ADDRESS_2',  'Akpugoeze-Ufuma Road, Ufuma, Anambra State');
 
 // ── Database ───────────────────────────────────────────────
 define('DB_HOST', 'localhost');
@@ -33,7 +38,7 @@ define('YOUTUBE_EMBED_URL', 'https://www.youtube.com/embed/Rufv0ew0u_w');
 // ── Email ──────────────────────────────────────────────────
 define('ADMIN_EMAIL', 'info@pingaagro.com');
 define('FROM_EMAIL',  'noreply@pingaagro.com');
-define('FROM_NAME',   'Pinga Agro Website');
+define('FROM_NAME',   'Pinga Agro Ltd');
 
 // ── Error Display ──────────────────────────────────────────
 if (ENVIRONMENT === 'development') {

@@ -1,0 +1,75 @@
+/* ============================================================
+   PRODUCTS PAGE — Product Layout · Features · Quality Pillars
+   ============================================================ */
+
+/* ── Product Layout ───────────────────────────────────────── */
+.product-layout {
+    display              : grid;
+    grid-template-columns: 1fr 1fr;
+    gap                  : var(--space-3xl);
+    align-items          : center;
+}
+
+.product-layout--reverse {
+    direction: rtl;
+}
+
+.product-layout--reverse > * {
+    direction: ltr;
+}
+
+.product-layout__image {
+    border-radius: var(--radius-md);
+    overflow     : hidden;
+    aspect-ratio : 4/3;
+    background   : var(--green-light);
+}
+
+.product-layout__img-placeholder {
+    width          : 100%;
+    height         : 100%;
+    min-height     : 300px;
+    display        : flex;
+    align-items    : center;
+    justify-content: center;
+    font-size      : 5rem;
+    background     : linear-gradient(135deg, var(--green-light), var(--border));
+}
+
+.product-features {
+    margin-top    : var(--space-md);
+    display       : flex;
+    flex-direction: column;
+    gap           : 0.6rem;
+}
+
+.product-features li {
+    font-size  : var(--text-sm);
+    color      : var(--text-body);
+    display    : flex;
+    align-items: center;
+    gap        : 0.5rem;
+}
+
+/* ── Quality Pillars ──────────────────────────────────────── */
+.quality-pillars {
+    display              : grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap                  : var(--space-lg);
+    margin-top           : var(--space-xl);
+}
+
+.quality-pillar {
+    background   : rgba(255, 255, 255, 0.06);
+    border       : 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-md);
+    padding      : var(--space-lg);
+    text-align   : center;
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .product-layout          { grid-template-columns: 1fr; }
+    .product-layout--reverse { direction: ltr; }
+    .quality-pillars         { grid-template-columns: 1fr; }
+}

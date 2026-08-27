@@ -1,8 +1,4 @@
-/* ============================================================
-   PAGES — About · Products
-   ============================================================ */
-
-/* ── About: Mission & Vision ──────────────────────────────── */
+/* ── Mission & Vision ─────────────────────────────────────── */
 .mv-grid {
     display              : grid;
     grid-template-columns: 1fr 1fr;
@@ -37,10 +33,10 @@
     line-height: 1.8;
 }
 
-/* ── About: Values (RICET) ────────────────────────────────── */
+/* ── Values (RICCET) ──────────────────────────────────────── */
 .values-grid {
     display              : grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap                  : var(--space-md);
 }
 
@@ -88,28 +84,17 @@
 
 /* ── Team Grid ────────────────────────────────────────────── */
 .team-grid {
-    display: grid;
+    display              : grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-lg);
+    gap                  : var(--space-lg);
 }
 
+/* Desktop only: centre first card when total count is odd */
 @media (min-width: 769px) {
     .team-card:first-child:nth-last-child(odd) {
         grid-column: 1 / -1;
-        max-width: calc(50% - var(--space-lg) / 2);
-        margin: 0 auto;
-    }
-}
-
-@media (max-width: 768px) {
-    .team-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .team-card:first-child:nth-last-child(odd) {
-        grid-column: auto;
-        max-width: 100%;
-        margin: 0;
+        max-width  : calc(50% - var(--space-lg) / 2);
+        margin     : 0 auto;
     }
 }
 
@@ -174,9 +159,10 @@
     line-height: 1.7;
 }
 
+/* Team on dark background */
 .section--dark .team-card {
-    background: rgba(255,255,255,0.07);
-    border-color: rgba(255,255,255,0.14);
+    background  : rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.14);
 }
 
 .section--dark .team-card__info h4 {
@@ -188,114 +174,18 @@
 }
 
 .section--dark .team-card__info p {
-    color: rgba(255,255,255,0.68);
+    color: rgba(255, 255, 255, 0.68);
 }
 
 .section--dark .team-card__photo-placeholder {
-    background: rgba(255,255,255,0.05);
+    background: rgba(255, 255, 255, 0.05);
 }
 
 .section--dark h2 {
     color: var(--white);
 }
 
-/* ── Products: Layout ─────────────────────────────────────── */
-.product-layout {
-    display              : grid;
-    grid-template-columns: 1fr 1fr;
-    gap                  : var(--space-3xl);
-    align-items          : center;
-}
-
-.product-layout--reverse {
-    direction: rtl;
-}
-
-.product-layout--reverse>* {
-    direction: ltr;
-}
-
-.product-layout__image {
-    border-radius: var(--radius-md);
-    overflow     : hidden;
-    aspect-ratio : 4/3;
-    background   : var(--green-light);
-}
-
-.product-layout__img-placeholder {
-    width          : 100%;
-    height         : 100%;
-    min-height     : 300px;
-    display        : flex;
-    align-items    : center;
-    justify-content: center;
-    font-size      : 5rem;
-    background     : linear-gradient(135deg, var(--green-light), var(--border));
-}
-
-.product-features {
-    margin-top    : var(--space-md);
-    display       : flex;
-    flex-direction: column;
-    gap           : 0.6rem;
-}
-
-.product-features li {
-    font-size  : var(--text-sm);
-    color      : var(--text-body);
-    display    : flex;
-    align-items: center;
-    gap        : 0.5rem;
-}
-
-/* ── Products: Quality Pillars ────────────────────────────── */
-.quality-pillars {
-    display              : grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap                  : var(--space-lg);
-    margin-top           : var(--space-xl);
-}
-
-.quality-pillar {
-    background   : rgba(255, 255, 255, 0.06);
-    border       : 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: var(--radius-md);
-    padding      : var(--space-lg);
-    text-align   : center;
-}
-
-/* ── Responsive: Pages ────────────────────────────────────── */
-@media (max-width: 1024px) {
-    .values-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-
-    .mv-grid,
-    .team-grid,
-    .product-layout,
-    .quality-pillars {
-        grid-template-columns: 1fr;
-    }
-
-    .product-layout--reverse {
-        direction: ltr;
-    }
-
-    .values-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-@media (max-width: 480px) {
-    .values-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* ── Memberships Grid ─────────────────────────────────────── */
+/* ── Memberships ──────────────────────────────────────────── */
 .memberships-grid {
     display              : grid;
     grid-template-columns: repeat(3, 1fr);
@@ -378,33 +268,126 @@
     color      : var(--text-dark);
 }
 
-/* ── Responsive additions ─────────────────────────────────── */
+/* ── Video ──────────────────────────────────────────── */
+.video-section {
+    grid-template-columns: 1fr;
+}
+
+/* ── Video Section ────────────────────────────────────────── */
+.video-section {
+    display              : grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap                  : var(--space-3xl);
+    align-items          : center;
+}
+
+.video-section__player {
+    position     : relative;
+    border-radius: var(--radius-md);
+    overflow     : hidden;
+    aspect-ratio : 16/9;
+    background   : var(--text-dark);
+    box-shadow   : var(--shadow-lg);
+}
+
+.video-section__player iframe {
+    position: absolute;
+    inset   : 0;
+    width   : 100%;
+    height  : 100%;
+    border  : none;
+}
+
+.video-placeholder {
+    width          : 100%;
+    height         : 100%;
+    position       : absolute;
+    inset          : 0;
+    background     : linear-gradient(135deg, #0f3d1a, var(--green-dark));
+    display        : flex;
+    align-items    : center;
+    justify-content: center;
+}
+
+.video-placeholder__inner {
+    text-align: center;
+    color     : rgba(255, 255, 255, 0.7);
+}
+
+.video-play-btn {
+    width          : 72px;
+    height         : 72px;
+    border-radius  : 50%;
+    background     : rgba(201, 168, 76, 0.9);
+    color          : var(--text-dark);
+    display        : flex;
+    align-items    : center;
+    justify-content: center;
+    font-size      : 1.5rem;
+    margin         : 0 auto var(--space-md);
+    padding-left   : 4px;
+}
+
+.video-placeholder__inner p {
+    font-weight  : 600;
+    color        : var(--white);
+    margin-bottom: 0.25rem;
+}
+
+.video-placeholder__inner small {
+    font-size: var(--text-xs);
+    opacity  : 0.6;
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
 @media (max-width: 1024px) {
+    .values-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
     .sdg-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 768px) {
+    .mv-grid {
+        grid-template-columns: 1fr;
+    }
+
     .memberships-grid {
         grid-template-columns: 1fr;
     }
 
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .sdg-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .values-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .team-card:first-child:nth-last-child(odd) {
+        grid-column: auto;
+        max-width  : 100%;
+        margin     : 0;
+    }
+
+    .video-section {
+        grid-template-columns: 1fr;
     }
 }
 
 @media (max-width: 480px) {
-    .sdg-grid {
+    .values-grid {
         grid-template-columns: 1fr;
     }
 
-    .values-grid {
+    .sdg-grid {
         grid-template-columns: 1fr;
     }
 }

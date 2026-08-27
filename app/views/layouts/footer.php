@@ -49,15 +49,19 @@
                 <h5>Contact</h5>
                 <div class="footer__contact-item">
                     <span class="icon">📍</span>
-                    <span>Oji River LGA, Enugu State, Nigeria</span>
+                    <span>Mile 2 Ahani, Oji River LGA, Enugu State</span>
+                </div>
+                <div class="footer__contact-item">
+                    <span class="icon">📍</span>
+                    <span>Akpugoeze-Ufuma Road, Ufuma, Anambra State</span>
                 </div>
                 <div class="footer__contact-item">
                     <span class="icon">📞</span>
-                    <span>+234 000 000 0000</span>
+                    <span><?= PHONE ?: 'Contact us by email' ?></span>
                 </div>
                 <div class="footer__contact-item">
                     <span class="icon">✉️</span>
-                    <span>info@pingaagro.com</span>
+                    <span><?= EMAIL ?: 'info@pingaagro.com' ?></span>
                 </div>
             </div>
 
@@ -65,7 +69,7 @@
 
         <!-- Bottom Bar -->
         <div class="footer__bottom">
-            <p>&copy; <?= date('Y') ?> Pinga Agro Investment Limited. All rights reserved.</p>
+            <p>&copy; <?= date('Y') ?> Pinga Agro Investment Limited (<?= RC_NUMBER ?>). All rights reserved.</p>
             <div class="footer__bottom-links">
                 <a href="<?= URLROOT ?>/privacy">Privacy Policy</a>
                 <a href="<?= URLROOT ?>/terms">Terms of Use</a>

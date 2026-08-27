@@ -23,20 +23,20 @@
     <div class="container">
         <div class="stats-bar__grid">
             <div class="stats-bar__item reveal">
-                <div class="stats-bar__number">8+</div>
-                <div class="stats-bar__label">Years of Operation</div>
+                <div class="stats-bar__number">2016</div>
+                <div class="stats-bar__label">Year Established</div>
+            </div>
+            <div class="stats-bar__item reveal">
+                <div class="stats-bar__number">2</div>
+                <div class="stats-bar__label">Farm Locations</div>
+            </div>
+            <div class="stats-bar__item reveal">
+                <div class="stats-bar__number">5+</div>
+                <div class="stats-bar__label">Product Lines</div>
             </div>
             <div class="stats-bar__item reveal">
                 <div class="stats-bar__number">3</div>
-                <div class="stats-bar__label">Core Product Lines</div>
-            </div>
-            <div class="stats-bar__item reveal">
-                <div class="stats-bar__number">100s</div>
-                <div class="stats-bar__label">Families Reached</div>
-            </div>
-            <div class="stats-bar__item reveal">
-                <div class="stats-bar__number">SE</div>
-                <div class="stats-bar__label">Nigeria's Agri Hub</div>
+                <div class="stats-bar__label">Industry Memberships</div>
             </div>
         </div>
     </div>
@@ -50,10 +50,14 @@
         <div class="about-strip">
             <div class="about-strip__content reveal">
                 <span class="eyebrow">Our Story</span>
-                <h2>A Farm Built on Conviction</h2>
+                <h2>Built to Feed a Continent</h2>
                 <span class="gold-rule"></span>
-                <p style="margin-top:1.5rem;">Founded in 2016 in Oji River, Enugu State, Pinga Agro Investment Limited was built on a simple but powerful belief: that Nigerian agriculture could be done with world-class quality and genuine community purpose.</p>
-                <p>Today, we are more than a farm. We are an authority in the poultry value chain — producing premium eggs, broilers, and layers while training the next generation of farmers and engaging with government and investors to transform the sector.</p>
+                <p style="margin-top:1.5rem;">
+                    Pinga Agro Investment Limited, formerly EL-Kurios Farms Ltd, is a private company established in March 2016 to operate in the livestock sector and its associated value chain. With farms in Oji River, Enugu State and Ufuma, Anambra State, we produce quality poultry products for customers across Southeast Nigeria.
+                </p>
+                <p>
+                    We are committed to food security and poverty reduction across Africa — not just as a business objective, but as a founding conviction that drives every decision we make.
+                </p>
                 <a href="<?= URLROOT ?>/about" class="btn btn-outline-green" style="margin-top:1rem;">Learn More About Us</a>
             </div>
             <div class="about-strip__image reveal">
@@ -200,14 +204,9 @@
                 </p>
             </div>
             <div class="video-section__player reveal">
-                <!-- 
-                    HOW TO USE:
-                    Replace the src below with your YouTube embed URL.
-                    Example: https://www.youtube.com/embed/YOUR_VIDEO_ID
-                    The placeholder below shows until a real video is added.
-                -->
+                
                 <?php
-                $youtubeEmbedUrl = YOUTUBE_EMBED_URL; // Add YouTube embed URL here when ready
+                $youtubeEmbedUrl = YOUTUBE_EMBED_URL;
                 ?>
                 <?php if ($youtubeEmbedUrl): ?>
                     <iframe

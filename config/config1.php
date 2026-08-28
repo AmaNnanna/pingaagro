@@ -19,9 +19,9 @@ ini_set('session.use_only_cookies', 1);
 define('URLROOT', 'https://new.pingaagro.com');
 define('SITENAME', 'Pinga Agro Investment Limited');
 define('RC_NUMBER',  'RC 1322122');
-define('PHONE',      ''); // awaiting from client
-define('EMAIL',      ''); // awaiting from client
-define('WHATSAPP',   ''); // awaiting from client
+define('PHONE',      '+234 701 197 2420');
+define('EMAIL',      'info@pingaagro.com');
+define('WHATSAPP',   '');
 define('ADDRESS_1',  'Mile 2 Ahani, Oji River LGA, Enugu State');
 define('ADDRESS_2',  'Akpugoeze-Ufuma Road, Ufuma, Anambra State');
 

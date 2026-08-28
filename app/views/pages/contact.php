@@ -142,7 +142,7 @@
                         <div class="contact-info__icon">📞</div>
                         <div>
                             <h4>Phone</h4>
-                            <p>Contact us by email for now</p>
+                            <p>+234 701 197 2420</p>
                         </div>
                     </div>
                     <div class="contact-info__item">
@@ -153,13 +153,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="contact-info__item">
+                <!-- <div class="contact-info__item">
                     <div class="contact-info__icon">💬</div>
                     <div>
                         <h4>WhatsApp</h4>
                         <p>+234 000 000 0000</p>
                     </div>
-                </div>
+                </div> -->
             </div>
 
             <div class="contact-response">

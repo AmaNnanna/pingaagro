@@ -225,47 +225,63 @@
 }
 
 /* ── SDG Grid ─────────────────────────────────────────────── */
+/* ── SDG Grid ─────────────────────────────────────────────── */
 .sdg-grid {
     display              : grid;
     grid-template-columns: repeat(4, 1fr);
     gap                  : var(--space-md);
+    margin-bottom        : var(--space-lg);
 }
 
 .sdg-item {
-    background   : var(--white);
-    border       : 1px solid var(--border);
-    border-radius: var(--radius-md);
-    padding      : var(--space-md);
-    display      : flex;
-    align-items  : center;
-    gap          : var(--space-sm);
+    display       : flex;
+    flex-direction: column;
+    align-items   : center;
+    gap           : var(--space-sm);
+    text-align    : center;
+}
+
+.sdg-item a {
+    display      : block;
+    border-radius: var(--radius-sm);
+    overflow     : hidden;
     transition   : var(--transition);
+    width        : 100%;
 }
 
-.sdg-item:hover {
-    border-color: var(--gold);
-    box-shadow  : var(--shadow-sm);
+.sdg-item a:hover {
+    transform : translateY(-4px);
+    box-shadow: var(--shadow-md);
 }
 
-.sdg-num {
-    width          : 36px;
-    height         : 36px;
-    border-radius  : 50%;
-    background     : var(--green-dark);
-    color          : var(--gold);
-    font-family    : var(--font-display);
-    font-size      : var(--text-base);
-    font-weight    : 700;
-    display        : flex;
-    align-items    : center;
-    justify-content: center;
-    flex-shrink    : 0;
+.sdg-item img {
+    width     : 100%;
+    height    : auto;
+    display   : block;
 }
 
-.sdg-item span:last-child {
-    font-size  : var(--text-sm);
+.sdg-item span {
+    font-size  : var(--text-xs);
     font-weight: 600;
-    color      : var(--text-dark);
+    color      : var(--text-muted);
+    line-height: 1.4;
+}
+
+.sdg-attribution {
+    text-align : center;
+    font-size  : var(--text-xs);
+    color      : var(--text-muted);
+    margin-top : var(--space-lg);
+    line-height: 1.7;
+}
+
+.sdg-attribution a {
+    color      : var(--green-dark);
+    font-weight: 600;
+}
+
+.sdg-attribution a:hover {
+    color: var(--gold-dark);
 }
 
 /* ── Video ──────────────────────────────────────────── */

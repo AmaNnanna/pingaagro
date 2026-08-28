@@ -86,6 +86,7 @@
 <!-- ── Core JS (every page) ──────────────────────────────── -->
 <script src="<?= URLROOT ?>/js/main.js"></script>
 <script src="<?= URLROOT ?>/js/reveal.js"></script>
+<script src="<?= URLROOT ?>/js/chatbot.js"></script>
 
 <!-- ── Page-specific JS ──────────────────────────────────── -->
 <?php if ($currentUrl === ''): ?>
@@ -94,6 +95,96 @@
 <?php elseif (strpos($currentUrl, 'review/create') === 0): ?>
     <script src="<?= URLROOT ?>/js/review.js"></script>
 <?php endif; ?>
+
+<!-- ═════ CHAT WIDGET ════════ -->
+<div class="chat-widget" id="chatWidget">
+
+    <!-- Trigger Button -->
+    <button class="chat-trigger" id="chatTrigger" aria-label="Open chat">
+        <span class="chat-trigger__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+            </svg>
+        </span>
+        <span class="chat-trigger__label">Chat with us</span>
+    </button>
+
+    <!-- Chat Panel -->
+    <div class="chat-panel" id="chatPanel" role="dialog" aria-label="Chat with Pinga Agro">
+
+        <!-- Panel Header -->
+        <div class="chat-panel__header">
+            <div class="chat-panel__brand">
+                <img src="<?= URLROOT ?>/images/logo.png" alt="Pinga Agro">
+                <div>
+                    <strong>Pinga Agro</strong>
+                    <span>We typically reply within 24 hours</span>
+                </div>
+            </div>
+            <button class="chat-panel__close" id="chatClose" aria-label="Close chat">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Panel Body -->
+        <div class="chat-panel__body" id="chatBody">
+            <!--
+                ═══════════════════════════════════════════════
+                INTEGRATION POINT
+                ═══════════════════════════════════════════════
+                When you choose a chat provider, replace the
+                placeholder content below with their embed code.
+
+                Example for Tawk.to:
+                <iframe src="https://tawk.to/chat/YOUR_ID/default" ...></iframe>
+
+                Example for Tidio:
+                <script src="//code.tidio.co/YOUR_KEY.js"></script>
+
+                Example for WhatsApp:
+                <a href="https://wa.me/YOUR_NUMBER">...</a>
+                ═══════════════════════════════════════════════
+            -->
+
+            <!-- Placeholder — remove when provider is connected -->
+            <div class="chat-placeholder">
+                <div class="chat-placeholder__avatar">
+                    <img src="<?= URLROOT ?>/images/logo.png" alt="Pinga Agro">
+                </div>
+                <div class="chat-placeholder__bubble">
+                    <p>👋 Hello! Welcome to Pinga Agro Investment Limited.</p>
+                    <p>How can we help you today?</p>
+                </div>
+                <div class="chat-placeholder__options">
+                    <a href="<?= URLROOT ?>/contact?subject=product"
+                        class="chat-option">🥚 Product Enquiry</a>
+                    <a href="<?= URLROOT ?>/contact?subject=investor"
+                        class="chat-option">💼 Investment</a>
+                    <a href="<?= URLROOT ?>/contact?subject=farmer"
+                        class="chat-option">🌾 Farmer Support</a>
+                    <a href="<?= URLROOT ?>/contact?subject=general"
+                        class="chat-option">✉️ General Enquiry</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Panel Footer -->
+        <div class="chat-panel__footer">
+            <a href="<?= URLROOT ?>/contact" class="chat-panel__footer-link">
+                Or send us a message →
+            </a>
+        </div>
+
+    </div>
+</div>
 
 </body>
 

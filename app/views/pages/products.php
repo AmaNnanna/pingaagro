@@ -27,10 +27,7 @@
     <div class="container">
         <div class="product-layout reveal">
             <div class="product-layout__image">
-                <!-- Replace with actual product image -->
-                <div class="product-layout__img-placeholder">
-                    <img src="<?= URLROOT ?>/images/eggs.jpg" alt="Pinga Agro Investment Limited">
-                </div>
+                <img src="<?= URLROOT ?>/images/eggs.jpg" alt="Pinga Agro Investment Limited">
             </div>
             <div class="product-layout__content">
                 <h2>Eggs</h2>
@@ -54,9 +51,7 @@
     <div class="container">
         <div class="product-layout product-layout--reverse reveal">
             <div class="product-layout__image">
-                <div class="product-layout__img-placeholder">
-                    <img src="<?= URLROOT ?>/images/point-of-lay.jpg" alt="Pinga Agro Investment Limited">
-                </div>
+                <img src="<?= URLROOT ?>/images/products/point-of-lay2.jpg" alt="Pinga Agro Investment Limited">
             </div>
             <div class="product-layout__content">
                 <h2>Point of Lay</h2>
@@ -80,7 +75,7 @@
     <div class="container">
         <div class="product-layout reveal">
             <div class="product-layout__image">
-                <div class="product-layout__img-placeholder">🐤</div>
+                <img src="<?= URLROOT ?>/images/products/day-old2.jpg" alt="Pinga Agro Investment Limited">
             </div>
             <div class="product-layout__content">
                 <h2>Day Old Chicks</h2>
@@ -105,7 +100,7 @@
     <div class="container">
         <div class="product-layout product-layout--reverse reveal">
             <div class="product-layout__image">
-                <div class="product-layout__img-placeholder">🌾</div>
+                <img src="<?= URLROOT ?>/images/products/feed.jpg" alt="Pinga Agro Investment Limited">
             </div>
             <div class="product-layout__content">
                 <h2>Feeds Distribution</h2>

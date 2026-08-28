@@ -53,7 +53,7 @@
             <div class="mv-card reveal">
                 <div class="mv-card__icon">🎯</div>
                 <h3>Our Mission</h3>
-                <p>To sustainably improve food security and help reduce poverty across Africa.</p>
+                <p>To provide safe, nutritious food through a sustainable agribusiness model that delivers lasting value.</p>
             </div>
             <div class="mv-card mv-card--gold reveal">
                 <div class="mv-card__icon">🌍</div>
@@ -118,19 +118,22 @@
         </div>
         <div class="memberships-grid">
             <div class="membership-card reveal">
-                <div class="membership-card__icon">🏛️</div>
+                <!-- <div class="membership-card__icon">🏛️</div>
                 <h4>Enugu Chamber of Commerce</h4>
-                <p>Industry, Mines and Agriculture (ECCIMA)</p>
+                <p>Industry, Mines and Agriculture (ECCIMA)</p> -->
+                <img src="<?= URLROOT ?>/images/membership/Enugu-Chamber.jpg" alt="Enugu Chamber of Commerce" style="width:100%;height:auto;border-radius:var(--radius-sm);">
             </div>
             <div class="membership-card reveal">
-                <div class="membership-card__icon">🌍</div>
-                <h4>Nigeria Netherlands Chamber of Commerce</h4>
-                <p>International trade and bilateral commerce</p>
+                <!-- <div class="membership-card__icon">🌍</div>
+                <h4>Nigerian Employee</h4>
+                <p>Consultative forum</p> -->
+                <img src="<?= URLROOT ?>/images/membership/nigeria-employers-consultative-association-neca-f7621230.jpg" alt="Nigerian Employers Consultative Association" style="width:100%;height:auto;border-radius:var(--radius-sm);">
             </div>
             <div class="membership-card reveal">
-                <div class="membership-card__icon">🐔</div>
+                <!-- <div class="membership-card__icon">🐔</div>
                 <h4>Poultry Association of Nigeria</h4>
-                <p>Nigeria's foremost poultry industry body</p>
+                <p>Nigeria's foremost poultry industry body</p> -->
+                <img src="<?= URLROOT ?>/images/membership/pan.jpg" alt="Poultry Association of Nigeria" style="width:100%;height:auto;border-radius:var(--radius-sm);">
             </div>
         </div>
     </div>
@@ -151,10 +154,8 @@
             <!-- Director 1 -->
             <div class="team-card reveal">
                 <div class="team-card__photo">
-                    <!-- Replace placeholder with:
-                    <img src="<?= URLROOT ?>/images/team/ifechukwu-anajekwu.jpg"
-                         alt="Ifechukwu Gabriel Anajekwu"> -->
-                    <div class="team-card__photo-placeholder">👤</div>
+                    <img src="<?= URLROOT ?>/images/team/CE0.jpeg"
+                         alt="Ifechukwu Gabriel Anajekwu">
                 </div>
                 <div class="team-card__info">
                     <h4>Ifechukwu Gabriel Anajekwu</h4>
@@ -180,9 +181,8 @@
             <!-- Management 1 -->
             <div class="team-card reveal">
                 <div class="team-card__photo">
-                    <img src="<?= URLROOT ?>/images/team/stanley-ibemgbo.jpg"
+                    <img src="<?= URLROOT ?>/images/team/Farm-manager.jpeg"
                         alt="Stanley Ibemgbo">
-                    <div class="team-card__photo-placeholder">👤</div>
                 </div>
                 <div class="team-card__info">
                     <h4>Stanley Ibemgbo</h4>
@@ -200,7 +200,7 @@
                 </div>
                 <div class="team-card__info">
                     <h4>Anajekwu Martin Ugochukwu</h4>
-                    <span class="team-card__role">Assistant Farm Manager — Oji River Farm</span>
+                    <span class="team-card__role">Farm Manager — Oji River Farm</span>
                     <p>A dedicated poultry production technician with 8 years of hands-on experience in poultry layer management. Martin has built deep practical expertise in the day-to-day management of layer flocks — from rearing and feeding to health monitoring and production optimisation. His commitment to the Pinga standard and intimate knowledge of the Oji River farm operations make him a vital part of the company's operational backbone.</p>
                 </div>
             </div>
@@ -232,42 +232,46 @@
             <span class="eyebrow">Global Commitment</span>
             <h2>Sustainable Development Goals</h2>
             <span class="gold-rule gold-rule--center"></span>
-            <p>Pinga Agro is highly subscribed to the United Nations Sustainable Development Goals. Our operations directly contribute to the following:</p>
+            <p>Pinga Agro is committed to the United Nations Sustainable Development Goals. Our operations directly contribute to these eight goals.</p>
+            <p class="sdg-attribution">
+                SDG icons courtesy of the
+                <a href="https://www.un.org/sustainabledevelopment" target="_blank" rel="noopener">
+                    United Nations
+                </a>.
+            </p>
+            <p><i>
+                    Use of these icons does not imply UN endorsement.
+                </i>
+            </p>
         </div>
+
         <div class="sdg-grid reveal">
-            <div class="sdg-item">
-                <span class="sdg-num">1</span>
-                <span>No Poverty</span>
-            </div>
-            <div class="sdg-item">
-                <span class="sdg-num">2</span>
-                <span>Zero Hunger</span>
-            </div>
-            <div class="sdg-item">
-                <span class="sdg-num">3</span>
-                <span>Good Health & Well-Being</span>
-            </div>
-            <div class="sdg-item">
-                <span class="sdg-num">4</span>
-                <span>Quality Education</span>
-            </div>
-            <div class="sdg-item">
-                <span class="sdg-num">5</span>
-                <span>Gender Equality</span>
-            </div>
-            <div class="sdg-item">
-                <span class="sdg-num">6</span>
-                <span>Clean Water & Sanitation</span>
-            </div>
-            <div class="sdg-item">
-                <span class="sdg-num">7</span>
-                <span>Affordable & Clean Energy</span>
-            </div>
-            <div class="sdg-item">
-                <span class="sdg-num">8</span>
-                <span>Decent Work & Economic Growth</span>
-            </div>
+            <?php
+            $sdgs = [
+                1 => '',
+                2 => '',
+                3 => '',
+                4 => '',
+                5 => '',
+                6 => '',
+                7 => '',
+                8 => '',
+            ];
+            foreach ($sdgs as $num => $name):
+            ?>
+                <div class="sdg-item">
+                    <a href="https://www.un.org/sustainabledevelopment"
+                        target="_blank"
+                        rel="noopener"
+                        title="UN SDG <?= $num ?>: <?= $name ?>">
+                        <img src="<?= URLROOT ?>/images/sdg/sdg-<?= sprintf('%02d', $num) ?>.png"
+                            alt="SDG <?= $num ?>: <?= $name ?>">
+                    </a>
+                    <span><?= $name ?></span>
+                </div>
+            <?php endforeach; ?>
         </div>
+
     </div>
 </section>
 
@@ -284,7 +288,7 @@
                 </p>
             </div>
             <div class="video-section__player reveal">
-                
+
                 <?php
                 $youtubeEmbedUrl = YOUTUBE_EMBED_URL;
                 ?>

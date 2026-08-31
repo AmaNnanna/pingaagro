@@ -154,7 +154,7 @@
             <!-- Director 1 -->
             <div class="team-card reveal">
                 <div class="team-card__photo">
-                    <img src="<?= URLROOT ?>/images/team/CE0.jpeg"
+                    <img src="<?= URLROOT ?>/images/team/ifechukwu-anajekwu.jpg"
                          alt="Ifechukwu Gabriel Anajekwu">
                 </div>
                 <div class="team-card__info">
@@ -169,7 +169,6 @@
                 <div class="team-card__photo">
                     <img src="<?= URLROOT ?>/images/team/ugochi-anajekwu.jpg"
                         alt="Ugochi Anajekwu">
-                    <div class="team-card__photo-placeholder">👤</div>
                 </div>
                 <div class="team-card__info">
                     <h4>Ugochi Anajekwu</h4>
@@ -181,7 +180,7 @@
             <!-- Management 1 -->
             <div class="team-card reveal">
                 <div class="team-card__photo">
-                    <img src="<?= URLROOT ?>/images/team/Farm-manager.jpeg"
+                    <img src="<?= URLROOT ?>/images/team/stanley-ibemgbo.jpg"
                         alt="Stanley Ibemgbo">
                 </div>
                 <div class="team-card__info">

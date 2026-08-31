@@ -1,6 +1,4 @@
-<!-- ══════════════════════════════════════════════════════════
-     HERO
-═══════════════════════════════════════════════════════════ -->
+<!-- ═════════ HERO ════════════════════ -->
 <section class="hero">
     <div class="hero__visual">
         <img src="<?= URLROOT ?>/images/hero-image.jpg" alt="Pinga Agro Investment Limited">
@@ -16,9 +14,7 @@
     </div>
 </section>
 
-<!-- ══════════════════════════════════════════════════════════
-     STATS BAR
-═══════════════════════════════════════════════════════════ -->
+<!-- ═════ STATS BAR ═══════════════ -->
 <section class="stats-bar">
     <div class="container">
         <div class="stats-bar__grid">
@@ -42,9 +38,7 @@
     </div>
 </section>
 
-<!-- ══════════════════════════════════════════════════════════
-     ABOUT STRIP
-═══════════════════════════════════════════════════════════ -->
+<!-- ═══════ ABOUT STRIP ══════════════ -->
 <section class="section section--tint">
     <div class="container">
         <div class="about-strip">
@@ -67,9 +61,7 @@
     </div>
 </section>
 
-<!-- ══════════════════════════════════════════════════════════
-     FOCUS AREAS  —  Eggs · Broilers · Layers
-═══════════════════════════════════════════════════════════ -->
+<!-- ═════════ FOCUS AREAS ════════════ -->
 <section class="section">
     <div class="container">
         <div class="section-header--center reveal">
@@ -92,11 +84,11 @@
             </div>
             <div class="focus-card reveal">
                 <div class="focus-card__image">
-                    <img src="<?= URLROOT ?>/images/broilers.jpg" alt="Pinga Agro Investment Limited">
+                    <img src="<?= URLROOT ?>/images/products/day-old-chicks.jpg" alt="Day Old Chicks - Pinga Agro Investment Limited">
                 </div>
                 <div class="focus-card__body">
-                    <h3>Broilers</h3>
-                    <p>Premium quality broiler chickens raised with care, proper feed, and best-practice management for superior flavour and nutritional value.</p>
+                    <h3>Day Old Chicks</h3>
+                    <p>Healthy, vaccinated day-old pullet chicks handled with expert care from hatchry — giving your flock the strongest possible start in life.</p>
                     <a href="<?= URLROOT ?>/farm/broilers" class="focus-card__link">Learn More →</a>
                 </div>
             </div>

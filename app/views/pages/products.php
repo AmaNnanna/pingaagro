@@ -46,10 +46,35 @@
     </div>
 </section>
 
-<!-- POINT OF LAY -->
-<section class="section section--tint" id="point-of-lay">
+<!-- DAY OLD CHICKS -->
+<section class="section section--tint" id="doc">
     <div class="container">
         <div class="product-layout product-layout--reverse reveal">
+            <div class="product-layout__image">
+                <img src="<?= URLROOT ?>/images/products/day-old-chicks.jpg" alt="Day Old Chicks - Pinga Agro Investment Limited">
+            </div>
+            <div class="product-layout__content">
+                <h2>Day Old Chicks</h2>
+                <span class="gold-rule"></span>
+                <p style="margin-top:1.5rem;">
+                    Our day old pullet chicks are sourced from reputable hatcheries and handled with the utmost care from arrival. Each chick is vaccinated and health-checked before leaving our facility, giving your flock the strongest possible start.
+                </p>
+                <ul class="product-features">
+                    <li>✓ Pullet (female) chicks for layer production</li>
+                    <li>✓ Vaccinated from day one</li>
+                    <li>✓ Sourced from certified hatcheries</li>
+                    <li>✓ Available subject to seasonal scheduling</li>
+                </ul>
+                <a href="<?= URLROOT ?>/contact" class="btn btn-outline-green" style="margin-top:1.5rem;">Enquire About DOC</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- POINT OF LAY -->
+<section class="section section" id="point-of-lay">
+    <div class="container">
+        <div class="product-layout reveal">
             <div class="product-layout__image">
                 <img src="<?= URLROOT ?>/images/products/point-of-lay2.jpg" alt="Pinga Agro Investment Limited">
             </div>
@@ -65,31 +90,6 @@
                     <li>✓ Suitable for households, restaurants, and wholesale</li>
                 </ul>
                 <a href="<?= URLROOT ?>/contact" class="btn btn-outline-green" style="margin-top:1.5rem;">Enquire About Point of Lay</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- DAY OLD CHICKS -->
-<section class="section section" id="doc">
-    <div class="container">
-        <div class="product-layout reveal">
-            <div class="product-layout__image">
-                <img src="<?= URLROOT ?>/images/products/day-old2.jpg" alt="Pinga Agro Investment Limited">
-            </div>
-            <div class="product-layout__content">
-                <h2>Day Old Chicks</h2>
-                <span class="gold-rule"></span>
-                <p style="margin-top:1.5rem;">
-                    Our day old pullet chicks are sourced from reputable hatcheries and handled with the utmost care from arrival. Each chick is vaccinated and health-checked before leaving our facility, giving your flock the strongest possible start.
-                </p>
-                <ul class="product-features">
-                    <li>✓ Pullet (female) chicks for layer production</li>
-                    <li>✓ Vaccinated from day one</li>
-                    <li>✓ Sourced from certified hatcheries</li>
-                    <li>✓ Available subject to seasonal scheduling</li>
-                </ul>
-                <a href="<?= URLROOT ?>/contact" class="btn btn-outline-green" style="margin-top:1.5rem;">Enquire About DOC</a>
             </div>
         </div>
     </div>

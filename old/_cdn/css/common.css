@@ -1,0 +1,166 @@
+/**Any script needed everywhere should be here **/
+/* 
+(c) 2018 Masterweb Solutions 
+Written by Ekene Onuorah
+masterweb.com.ng
+For Masterweb Stores
+*/
+
+/* Rules for sizing the icon. */
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+i{vertical-align:middle;}
+a{text-decoration:none;color:#33F}
+a:hover{opacity:0.8;}
+h1{display:inline;font-weight:normal;font-size:inherit;}
+h2{display:inline;font-weight:normal;font-size:inherit;}
+h3{display:inline;font-weight:normal;font-size:inherit;}
+img{max-width:100%;}
+label{cursor:pointer;}
+
+.cursor{cursor:pointer;}
+.left{text-align:left;}
+.right{text-align:right;}
+.center{text-align:center;}
+.justify{text-align:justify;}
+.bold{font-weight:bold;}
+.strike{text-decoration:line-through;}
+.hidden{display:none;}
+.clear{clear:both;}
+.space{margin:10px 10px 10px 10px;}
+.divider{border-top:1px #999 solid;width:100%;padding:5px 0px 5px 0px;}
+.small{font-size:0.9em;}
+.smaller{font-size:0.8em;}
+.smallest{font-size:0.75em;}
+.bigger{font-size:1.25em;}
+.padding{padding:10px;}
+.margin{margin:10px;}
+.nowrap{white-space:nowrap;}
+.inline-block{display:inline-block;}
+.float-right{float:right;}
+.float-left{float:left;}
+.vertical-top{vertical-align:top;}
+.vertical-middle{vertical-align:middle;}
+.vertical-bottom{vertical-align:bottom;}
+.no-break{white-space: nowrap;}
+.up-down{margin:5px 0px 5px 0px;}
+
+.shadow{box-shadow: 0 0 20px #000;}	
+.shadow-text{color:#FFF;text-shadow:#600 1px 1px;}
+.curve{border-radius: 5px;-moz-border-radius: 5px;-webkit-border-radius: 5px;}
+.border{border: 1px #CCC solid;}	
+.border-hover{border: 1px #CCC solid;}	
+.border-hover:hover{box-shadow: 0 0 20px #000;}
+.tiny-font{font-size:10px;}
+.big-font{font-size:16px;}
+.normal-font{font-weight:normal;}
+.no-decoration{text-decoration:none;}
+
+.form-table{padding-bottom:10px;color:#bbb;font-size:0.95em;}
+.form-field{display:inline-block;width:30%;vertical-align:top;}
+.form-value{display:inline-block;width:60%;vertical-align:top;padding-left:10px;}
+.width-full{width:90%;}
+.width-200{width:90%;max-width:200px;}
+.width-300{width:90%;max-width:300px;}
+.width-400{width:90%;max-width:400px;}
+.width-500{width:90%;max-width:500px;}
+
+
+.error-message{background:#F63;color:#FFF;border:1px solid #600;padding:5px;margin:5px 0px 5px 0px;}
+.success-message{background:#0C3;color:#FFF;border:1px solid #063;padding:5px;margin:5px 0px 5px 0px;}
+.warning-message{background:#FF6;color:#F60;border:1px solid #960;padding:5px;margin:5px 0px 5px 0px;}
+.tip-message{background:#FF9;color:#060;border:1px solid #633;padding:5px;margin:5px 0px 5px 0px;}
+
+
+
+
+/**Form**/
+.input{min-height:40px;padding:0px 5px 0px 5px;border-top:0px;border-left:2px solid #eee;
+border-right:2px solid #eee;border-bottom:2px solid #eee;color:#000;vertical-align:top;}
+.select{min-height:40px;padding:0px 5px 0px 5px;border-top:0px;border-left:2px solid #eee;
+border-right:2px solid #eee;border-bottom:2px solid #eee;color:#000;color:#777;cursor:pointer;vertical-align:top;}
+.textarea{min-height:80px;height:auto;padding:0px 5px 0px 5px;border-top:0px;border-left:2px solid #eee;
+border-right:2px solid #eee;border-bottom:2px solid #eee;color:#000;}
+.checkbox{color:#000;cursor:pointer;}
+.input-upload{min-height:30px;padding:5px;border:2px solid #ddd;color:#777;background:#eee;cursor:pointer;}
+.submit{padding:10px;color:#FFF;background-color:#C60;border:1px solid #777;cursor:pointer;background:linear-gradient(to right, #c60, #C63);
+border-radius:3px;text-align:center;display:inline-block;vertical-align:bottom;}
+
+
+
+.button{padding:10px;color:#FFF;background-color:#C60;border:1px solid #777;cursor:pointer;background:linear-gradient(to right, #c60, #C63);
+border-radius:3px;text-align:center;display:inline-block;vertical-align:bottom;}
+.button:hover{opacity:0.8;}
+.counter{box-shadow: 0 0 10px #FF0;margin:2px;display:inline-block;vertical-align:middle;}
+
+
+
+
+
+
+.white{color:#FFF;}
+.gold{color:#F90;}
+.yellow{color:#FF6;}
+.red{color:#C00;}
+.green{color:#090;}
+.blue{color:#03F;}
+.blue-light{color:#09F;}
+.blood{color:#C00000;}
+.orange{color:#C63;}
+.gray{color:#CCC;}
+.gray1{color:#ddd;}
+.gray2{color:#bbb;}
+.gray3{color:#999;}
+.gray4{color:#777;}
+.gray5{color:#555;}
+.dark{color:#000;}
+
+.bg-green{background-color:#390;}
+.bg-red{background-color:#C03;}
+.bg-dark{background-color:#000;}
+.bg-gray{background-color:#333;}
+.bg-white{background-color:#fff;}
+.bg-blue{background-color:#03F;}
+.bg-blood{background-color:#C00;}
+.bg-milk{background-color:#FF9;}
+
+
+
+
+
+/**Only for menu on sidebar**/
+.menu-pop{position:fixed;top:30px;left:10%;z-index:914;max-width:400px;
+			min-width:150px;width:80%;height:auto;min-height:400px;padding:5px;
+			background:#FFC;color:#630;border:2px #000 solid;box-shadow: 0 0 10px #000;display:none;}
+			
+/**Only for things on the header like inventory (positioning at layout media query)**/
+.inventory-pop{position:fixed;top:25px;z-index:915;
+			min-width:150px;width:80%;height:auto;min-height:200px;padding:5px;
+			background:#FFC;color:#630;border:2px #000 solid;box-shadow: 0 0 10px #000;display:none;}
+			
+/**For actions where distraction is not needed... like events, addresses, profile etc...**/
+.page-pop{position:fixed;top:25px;left:3%;z-index:913;
+			min-width:150px;width:90%;height:auto;min-height:100%;padding:5px;
+			background:#FFC;color:#630;border:2px #000 solid;box-shadow: 0 0 10px #000;display:none;}
+			
+			
+/**For actions you must see...and then close and news too**/
+.fullpage-pop{position:fixed;top:5px;left:2%;z-index:916;
+			min-width:150px;width:92%;height:auto;min-height:100%;padding:5px;
+			background:#FFC;color:#630;border:2px #000 solid;box-shadow: 0 0 10px #000;display:none;}
+			
+			
+/**For warning before action**/
+.confirm-pop{position:absolute;top:10px;left:10px;z-index:917;
+			max-width:200px;width:100%;height:auto;min-height:200px;padding:5px;
+			background:#FFC;color:#630;border:2px #000 solid;box-shadow: 0 0 10px #000;display:none;}
+			
+			
+.close-button{position:absolute;top:-10px;right:-10px;width:20px;height:20px;color:white;background:red;
+		   cursor:pointer;border-radius:10px;text-align:center;font-size:15px;font-weight:bold;border:1px solid #000;}
+		   
+.help-button{position:absolute;top:-10px;right:15px;width:20px;height:20px;color:white;background:black;
+		   cursor:pointer;border-radius:10px;text-align:center;font-size:15px;font-weight:bold;border:1px solid #fff;}
+

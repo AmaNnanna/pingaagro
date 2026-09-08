@@ -275,7 +275,7 @@
 </section>
 
 <!--  VIDEO SECTION -->
-<section class="section section">
+<!-- <section class="section section">
     <div class="container">
         <div class="video-section">
             <div class="video-section__content reveal">
@@ -311,7 +311,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
 <!-- CTA -->
 <section class="section section--dark">

@@ -71,15 +71,41 @@
     </div>
 </section>
 
-<!-- POINT OF LAY -->
-<section class="section section" id="point-of-lay">
+<!-- PULLET -->
+<section class="section section" id="pullets">
     <div class="container">
         <div class="product-layout reveal">
             <div class="product-layout__image">
-                <img src="<?= URLROOT ?>/images/products/point-of-lay2.jpg" alt="Pinga Agro Investment Limited">
+                <div class="product-layout__img-placeholder">
+                    <img src="<?= URLROOT ?>/images/products/pullet.jpg" alt="Pinga Agro Investment Limited">
+                </div>
             </div>
             <div class="product-layout__content">
-                <h2>Point of Lay</h2>
+                <h2>Pullets</h2>
+                <span class="gold-rule"></span>
+                <p style="margin-top:1.5rem;">Our pullets are robust, meticulously reared young female chickens raised under optimal environments to secure your farm's future egg production. Handled by poultry professionals, these adolescent birds are prepared structurally and nutritionally to transition smoothly into high-performing layers.</p>
+                <p style="margin-top:1rem;">Available at various growth intervals — from growing pullets to near point-of-lay stages — tailored to match your specific restocking timelines.</p>
+                <ul class="product-features">
+                    <li>✓ Bred for optimal skeletal development and weight milestones</li>
+                    <li>✓ Complete, rigorous vaccination and health compliance profiles</li>
+                    <li>✓ Transition-ready for immediate transfer to laying facilities</li>
+                    <li>✓ Accompanied by flock management advisory from our team</li>
+                </ul>
+                <a href="<?= URLROOT ?>/contact" class="btn btn-outline-green" style="margin-top:1.5rem;">Enquire About Pullets</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- POINT OF LAY -->
+<section class="section section--tint" id="point-of-lay">
+    <div class="container">
+        <div class="product-layout product-layout--reverse reveal">
+            <div class="product-layout__image">
+                <img src="<?= URLROOT ?>/images/products/point-of-lay.jpg" alt="Pinga Agro Investment Limited">
+            </div>
+            <div class="product-layout__content">
+                <h2>Point of Lay/Cage</h2>
                 <span class="gold-rule"></span>
                 <p style="margin-top:1.5rem;">Our point of lay services provide comprehensive support for poultry producers, ensuring optimal performance and productivity throughout the laying cycle.</p>
                 <p style="margin-top:1rem;">From breeding stock selection to management strategies, we offer tailored solutions to meet the unique needs of each operation.</p>
@@ -96,9 +122,9 @@
 </section>
 
 <!-- FEEDS DISTRIBUTION -->
-<section class="section section--tint" id="feeds">
+<section class="section section" id="feeds">
     <div class="container">
-        <div class="product-layout product-layout--reverse reveal">
+        <div class="product-layout reveal">
             <div class="product-layout__image">
                 <img src="<?= URLROOT ?>/images/products/feed.jpg" alt="Pinga Agro Investment Limited">
             </div>
@@ -115,32 +141,6 @@
                     <li>✓ Expert feeding advice on request</li>
                 </ul>
                 <a href="<?= URLROOT ?>/contact" class="btn btn-outline-green" style="margin-top:1.5rem;">Enquire About Feeds</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- LAYERS -->
-<section class="section" id="layers">
-    <div class="container">
-        <div class="product-layout reveal">
-            <div class="product-layout__image">
-                <div class="product-layout__img-placeholder">
-                    <img src="<?= URLROOT ?>/images/layers.jpg" alt="Pinga Agro Investment Limited">
-                </div>
-            </div>
-            <div class="product-layout__content">
-                <h2>Layers</h2>
-                <span class="gold-rule"></span>
-                <p style="margin-top:1.5rem;">Our layer birds are productive, healthy, and reared with the expertise of a team that understands the full poultry value chain. Whether you are setting up a small-scale farm or expanding an existing operation, our layers are a reliable foundation.</p>
-                <p style="margin-top:1rem;">Available at various stages — from point-of-lay to established producers — depending on seasonal availability.</p>
-                <ul class="product-features">
-                    <li>✓ High-productivity breeds</li>
-                    <li>✓ Vaccinated and health-certified</li>
-                    <li>✓ Available at point-of-lay stage</li>
-                    <li>✓ Supported by post-purchase advisory from our team</li>
-                </ul>
-                <a href="<?= URLROOT ?>/contact" class="btn btn-outline-green" style="margin-top:1.5rem;">Enquire About Layers</a>
             </div>
         </div>
     </div>

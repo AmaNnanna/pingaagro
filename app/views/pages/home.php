@@ -94,12 +94,12 @@
             </div>
             <div class="focus-card reveal">
                 <div class="focus-card__image">
-                    <img src="<?= URLROOT ?>/images/layers.jpg" alt="Pinga Agro Investment Limited">
+                    <img src="<?= URLROOT ?>/images/products/point-of-lay.jpg" alt="Pinga Agro Investment Limited">
                 </div>
                 <div class="focus-card__body">
-                    <h3>Layers</h3>
-                    <p>Productive, healthy layer birds available for farms and households — raised with the expertise of a team committed to excellence in poultry.</p>
-                    <a href="<?= URLROOT ?>/farm/layers" class="focus-card__link">Learn More →</a>
+                    <h3>Point of Lay/Cage</h3>
+                    <p>Our point of lay services provide comprehensive support for poultry producers, ensuring optimal performance and productivity throughout the laying cycle.</p>
+                    <a href="<?= URLROOT ?>/farm/point-of-lay" class="focus-card__link">Learn More →</a>
                 </div>
             </div>
         </div>
@@ -184,7 +184,7 @@
 <!-- ══════════════════════════════════════════════════════════
      VIDEO SECTION
 ═══════════════════════════════════════════════════════════ -->
-<section class="section section--tint">
+<!-- <section class="section section--tint">
     <div class="container">
         <div class="video-section">
             <div class="video-section__content reveal">
@@ -220,7 +220,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
 <!-- ══════════════════════════════════════════════════════════
      REVIEWS

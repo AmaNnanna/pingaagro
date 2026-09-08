@@ -1,0 +1,27 @@
+[05-Jun-2026 11:08:51 Africa/Lagos] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'pingaagr_zvksdvhdb'@'162.241.85.37' (using password: YES) in /home2/pingaagro/public_html/config.php:8
+Stack trace:
+#0 /home2/pingaagro/public_html/config.php(8): mysqli_connect('pingaagro.com', 'pingaagr_zvksdv...', Object(SensitiveParameterValue), 'pingaagr_zvksdv...')
+#1 /home2/pingaagro/public_html/config.php(13): dbpass()
+#2 /home2/pingaagro/public_html/functions.php(2): include('/home2/pingaagr...')
+#3 /home2/pingaagro/public_html/pages/dir.php(2): include('/home2/pingaagr...')
+#4 /home2/pingaagro/public_html/pages/404.php(2): include('/home2/pingaagr...')
+#5 {main}
+  thrown in /home2/pingaagro/public_html/config.php on line 8
+[24-Aug-2026 13:04:31 Africa/Lagos] PHP Fatal error:  Uncaught mysqli_sql_exception: Too many connections in /home2/pingaagro/public_html/config.php:8
+Stack trace:
+#0 /home2/pingaagro/public_html/config.php(8): mysqli_connect('127.0.0.1', 'pingaagr_zvksdv...', Object(SensitiveParameterValue), 'pingaagr_zvksdv...')
+#1 /home2/pingaagro/public_html/config.php(13): dbpass()
+#2 /home2/pingaagro/public_html/functions.php(2): include('/home2/pingaagr...')
+#3 /home2/pingaagro/public_html/pages/dir.php(2): include('/home2/pingaagr...')
+#4 /home2/pingaagro/public_html/pages/404.php(2): include('/home2/pingaagr...')
+#5 {main}
+  thrown in /home2/pingaagro/public_html/config.php on line 8
+[27-Aug-2026 22:40:15 Africa/Lagos] PHP Fatal error:  Uncaught mysqli_sql_exception: Too many connections in /home2/pingaagro/public_html/config.php:8
+Stack trace:
+#0 /home2/pingaagro/public_html/config.php(8): mysqli_connect('127.0.0.1', 'pingaagr_zvksdv...', Object(SensitiveParameterValue), 'pingaagr_zvksdv...')
+#1 /home2/pingaagro/public_html/config.php(13): dbpass()
+#2 /home2/pingaagro/public_html/functions.php(2): include('/home2/pingaagr...')
+#3 /home2/pingaagro/public_html/pages/dir.php(2): include('/home2/pingaagr...')
+#4 /home2/pingaagro/public_html/pages/404.php(2): include('/home2/pingaagr...')
+#5 {main}
+  thrown in /home2/pingaagro/public_html/config.php on line 8

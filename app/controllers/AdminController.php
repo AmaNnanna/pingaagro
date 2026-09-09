@@ -349,4 +349,119 @@ class AdminController extends Controller
         $_SESSION['flash'] = ['type' => 'success', 'msg' => 'Review rejected.'];
         $this->redirect(URLROOT . '/admin/reviews');
     }
+
+
+    // ── GALLERY ───────────────────────────────────────────────
+    public function gallery(): void
+    {
+        $this->requireAuth();
+
+        $galleryModel = $this->model('Gallery');
+
+        $data = [
+            'title'   => 'Gallery | Admin',
+            'images'  => $galleryModel->getImages(100, 0),
+            'flash'   => $_SESSION['flash'] ?? null,
+        ];
+        unset($_SESSION['flash']);
+
+        $this->view('admin/gallery/index', $data, 'admin');
+    }
+
+    public function uploadimage(): void
+    {
+        $this->requireAuth();
+
+        if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+            $this->redirect(URLROOT . '/admin/gallery');
+        }
+
+        $galleryModel = $this->model('Gallery');
+        $errors       = [];
+
+        if (empty($_FILES['image']['name'])) {
+            $errors[] = 'Please select an image to upload.';
+        } else {
+            $file    = $_FILES['image'];
+            $maxSize = 5 * 1024 * 1024; // 5MB
+
+            if ($file['error'] !== UPLOAD_ERR_OK) {
+                $errors[] = 'Upload failed. Please try again.';
+            } elseif ($file['size'] > $maxSize) {
+                $errors[] = 'Image must be under 5MB.';
+            } else {
+                $finfo    = new finfo(FILEINFO_MIME_TYPE);
+                $mimeType = $finfo->file($file['tmp_name']);
+                $allowed  = ['image/jpeg', 'image/png', 'image/webp'];
+
+                if (!in_array($mimeType, $allowed)) {
+                    $errors[] = 'Image must be JPG, PNG, or WebP.';
+                } elseif (!getimagesize($file['tmp_name'])) {
+                    $errors[] = 'The file is not a valid image.';
+                } else {
+                    // Preserve original filename but make it safe
+                    $originalName = pathinfo($file['name'], PATHINFO_FILENAME);
+                    $ext          = pathinfo($file['name'], PATHINFO_EXTENSION);
+
+                    // Sanitise filename — replace spaces and special chars
+                    $safeName  = preg_replace('/[^a-zA-Z0-9_-]/', '-', $originalName);
+                    $safeName  = preg_replace('/-+/', '-', strtolower(trim($safeName, '-')));
+                    $filename  = $safeName . '-' . time() . '.' . strtolower($ext);
+
+                    $uploadDir = BASEPATH . 'public/images/gallery/';
+
+                    if (!is_dir($uploadDir)) {
+                        mkdir($uploadDir, 0755, true);
+                    }
+
+                    if (move_uploaded_file($file['tmp_name'], $uploadDir . $filename)) {
+                        $galleryModel->addImage([
+                            'filename'   => $filename,
+                            'caption'    => trim($_POST['caption']    ?? ''),
+                            'location'   => trim($_POST['location']   ?? ''),
+                            'sort_order' => (int)($_POST['sort_order'] ?? 0),
+                        ]);
+
+                        $_SESSION['flash'] = [
+                            'type' => 'success',
+                            'msg'  => 'Image uploaded successfully.'
+                        ];
+                        $this->redirect(URLROOT . '/admin/gallery');
+                    } else {
+                        $errors[] = 'Image could not be saved. Check folder permissions.';
+                    }
+                }
+            }
+        }
+
+        if (!empty($errors)) {
+            $_SESSION['flash'] = ['type' => 'error', 'msg' => implode(' ', $errors)];
+            $this->redirect(URLROOT . '/admin/gallery');
+        }
+    }
+
+    public function deleteimage(int $id): void
+    {
+        $this->requireAuth();
+
+        if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+            $this->redirect(URLROOT . '/admin/gallery');
+        }
+
+        $galleryModel = $this->model('Gallery');
+        $filename     = $galleryModel->deleteImage($id);
+
+        if ($filename) {
+            // Delete the actual file from disk
+            $filePath = BASEPATH . 'public/images/gallery/' . $filename;
+            if (file_exists($filePath)) {
+                unlink($filePath);
+            }
+            $_SESSION['flash'] = ['type' => 'success', 'msg' => 'Image deleted.'];
+        } else {
+            $_SESSION['flash'] = ['type' => 'error', 'msg' => 'Image not found.'];
+        }
+
+        $this->redirect(URLROOT . '/admin/gallery');
+    }
 }

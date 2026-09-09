@@ -1,6 +1,7 @@
 <?php
+
 // ── Environment ────────────────────────────────────────────
-define('ENVIRONMENT', 'production');
+define('ENVIRONMENT', 'development');
 
 // ── Session Security ─────────────────────────────────────────
 session_set_cookie_params([
@@ -16,20 +17,20 @@ ini_set('session.use_strict_mode',  1);
 ini_set('session.use_only_cookies', 1);
 
 // ── URLs ───────────────────────────────────────────────────
-define('URLROOT', 'https://pingaagro.com');
+define('URLROOT', 'http://pingaagro.test');
 define('SITENAME', 'Pinga Agro Investment Limited');
 define('RC_NUMBER',  'RC 1322122');
-define('PHONE',      '+234 701 197 2420');
-define('EMAIL',      'info@pingaagro.com');
-define('WHATSAPP',   '');
+define('PHONE',      '+234 701 197 2420'); // awaiting from client
+define('EMAIL',      'info@pingaagro.com'); // awaiting from client
+define('WHATSAPP',   ''); // awaiting from client
 define('ADDRESS_1',  'Mile 2 Ahani, Oji River LGA, Enugu State');
 define('ADDRESS_2',  'Akpugoeze-Ufuma Road, Ufuma, Anambra State');
 
 // ── Database ───────────────────────────────────────────────
 define('DB_HOST', 'localhost');
-define('DB_USER', 'pingaagr_axehrazdb');
-define('DB_PASS', 'YlD7$#im!');
-define('DB_NAME', 'pingaagr_axehrazdb');
+define('DB_USER', 'root');
+define('DB_PASS', '');
+define('DB_NAME', 'pingaagro');
 
 // ── Video ───────────────────────────────────────────────────
 define('YOUTUBE_EMBED_URL', 'https://www.youtube.com/embed/Rufv0ew0u_w');
@@ -49,14 +50,26 @@ if (ENVIRONMENT === 'development') {
 }
 
 // ── Security Headers ────────────────────────────────────────
+// These headers tell the browser how to behave when rendering your pages.
+// They are sent with every response.
+
 if (ENVIRONMENT === 'production') {
 
+    // Prevent your site being embedded in iframes — blocks clickjacking
     header('X-Frame-Options: SAMEORIGIN');
 
+    // Prevent browsers guessing content type — blocks MIME sniffing attacks
     header('X-Content-Type-Options: nosniff');
 
+    // Control referrer information sent to other sites
     header('Referrer-Policy: strict-origin-when-cross-origin');
 
+    // Force HTTPS for 1 year — browsers will refuse to load the site over HTTP
+    // Only enable this when you are certain HTTPS is working correctly
+    // header('Strict-Transport-Security: max-age=31536000; includeSubDomains');
+
+    // Content Security Policy — tells the browser which sources are trusted
+    // This is the most powerful XSS defence available
     header(
         "Content-Security-Policy: "
             . "default-src 'self'; "
@@ -68,5 +81,6 @@ if (ENVIRONMENT === 'production') {
             . "connect-src 'self';"
     );
 
+    // Remove PHP version from headers
     header_remove('X-Powered-By');
 }

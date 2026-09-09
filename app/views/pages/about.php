@@ -53,7 +53,7 @@
             <div class="mv-card reveal">
                 <div class="mv-card__icon">🎯</div>
                 <h3>Our Mission</h3>
-                <p>To provide safe, nutritious food through a sustainable agribusiness model that delivers lasting value.</p>
+                <p>To deliver safe, nutritious food through sustainable agribusiness that creates stakeholders value.</p>
             </div>
             <div class="mv-card mv-card--gold reveal">
                 <div class="mv-card__icon">🌍</div>
@@ -270,6 +270,58 @@
                 </div>
             <?php endforeach; ?>
         </div>
+
+    </div>
+</section>
+
+<!-- FARM LIFE GALLERY -->
+<section class="section">
+    <div class="container">
+        <div class="section-header--center reveal">
+            <span class="eyebrow">Life at Pinga Agro</span>
+            <h2>The People Behind the Quality</h2>
+            <span class="gold-rule gold-rule--center"></span>
+            <p>A glimpse into the daily life, dedication, and teamwork that makes Pinga Agro Investment Limited what it is.</p>
+        </div>
+
+        <?php if (!empty($images)): ?>
+
+            <div class="farm-gallery" id="farmGallery">
+                <?php foreach ($images as $img): ?>
+                    <div class="farm-gallery__item reveal">
+                        <img src="<?= URLROOT ?>/images/gallery/<?= htmlspecialchars($img->filename) ?>"
+                             alt="<?= htmlspecialchars($img->caption ?: 'Pinga Agro') ?>"
+                             loading="lazy">
+                        <?php if ($img->caption || $img->location): ?>
+                            <div class="farm-gallery__overlay">
+                                <span><?= htmlspecialchars($img->caption ?: $img->location) ?></span>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+
+            <?php if ($totalImages > 6): ?>
+                <div class="gallery-load-more reveal" id="galleryLoadMore">
+                    <button class="btn btn-outline-green"
+                            id="loadMoreBtn"
+                            data-offset="6"
+                            data-total="<?= $totalImages ?>"
+                            data-url="<?= URLROOT ?>/about/loadmore">
+                        Load More Photos
+                        <span class="gallery-count">
+                            Showing 6 of <?= $totalImages ?>
+                        </span>
+                    </button>
+                </div>
+            <?php endif; ?>
+
+        <?php else: ?>
+            <div class="gallery-empty reveal">
+                <span>📷</span>
+                <p>Farm photos coming soon.</p>
+            </div>
+        <?php endif; ?>
 
     </div>
 </section>

@@ -1,1 +1,0 @@
-<?php ob_start();  $dir="../"; include($dir.'include/change.php'); ?>

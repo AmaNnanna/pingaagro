@@ -1,0 +1,73 @@
+ErrorDocument 404 /404-page
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+#RewriteCond %{HTTPS} off
+#RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+#Ignore any physical files
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+
+
+#Static pages
+RewriteRule ^404-page$ pages/404.php [NC,L]
+RewriteRule ^about$ pages/about.php [NC,L]
+RewriteRule ^contact$ pages/page.php?id=2 [NC,L]
+RewriteRule ^privacy$ pages/page.php?id=3 [NC,L]
+RewriteRule ^terms$ pages/page.php?id=4 [NC,L]
+RewriteRule ^gallery$ pages/gallery.php [NC,L]
+RewriteRule ^blog$ pages/bloghome.php [NC,L]
+RewriteRule ^shop$ pages/shop.php [NC,L]
+RewriteRule ^services$ pages/page.php?id=7 [NC,L]
+
+RewriteRule ^page-([0-9]+)$ pages/page.php?id=$1 [NC,L]
+RewriteRule ^page$ pages/index.php [NC,L]
+RewriteRule ^page/$ pages/index.php [NC,L]
+RewriteRule ^news$ pages/news.php [NC,L]
+RewriteRule ^news/$ pages/news.php [NC,L]
+
+RewriteRule ^category/([0-9]+)$ pages/news.php?cat=$1  [NC,L]
+RewriteRule ^category/([0-9]+)/$ pages/news.php?cat=$1  [NC,L]
+RewriteRule ^category/([A-Za-z0-9-]+)$ pages/news.php?cat=$1  [NC,L]
+RewriteRule ^category/([A-Za-z0-9-]+)/$ pages/news.php?cat=$1  [NC,L]
+RewriteRule ^category$ pages/category.php  [NC,L]
+RewriteRule ^category/$ pages/category.php  [NC,L]
+
+
+#User pages/setup
+RewriteRule ^join$ user/register.php [NC,L]
+RewriteRule ^join-([0-9]+)$ user/register.php?ref=$1 [NC,L]
+RewriteRule ^login$ user/login.php [NC,L]
+RewriteRule ^register$ user/register.php [NC,L]
+RewriteRule ^register/$ user/register.php [NC,L]
+RewriteRule ^logout$ user/logout.php [NC,L]
+RewriteRule ^user/invite$ user/invite.php [NC,L]
+RewriteRule ^user/login$ user/login.php [NC,L]
+RewriteRule ^user/recover-password$ user/recover.php [NC,L]
+RewriteRule ^recover-password$ user/recover.php [NC,L]
+RewriteRule ^user/logout$ user/logout.php [NC,L]
+
+RewriteRule ^user/verification$ user/setting_verification.php [NC,L]
+RewriteRule ^user/profile$ user/setting_profile.php [NC,L]
+RewriteRule ^user/password$ user/setting_password.php [NC,L]
+RewriteRule ^user/preference$ user/setting_preference.php [NC,L]
+RewriteRule ^user/helper$ user/setting_helper.php [NC,L]
+
+RewriteRule ^profile/([0-9]+)$ user/myprofile.php?id=$1  [NC,L]
+RewriteRule ^profile/([0-9]+)/$ user/myprofile.php?id=$1  [NC,L]
+RewriteRule ^profile/([0-9]+)/([0-9-]+)$ user/myprofile.php?id=$1&start=$2  [NC,L]
+RewriteRule ^profile/([0-9]+)/([0-9-]+)/$ user/myprofile.php?id=$1&start=$2  [NC,L]
+
+
+RewriteRule ^sitemap.xml$ sitemap.php [NC,L]
+RewriteRule ^rss.xml$ rss.php [NC,L]
+
+
+
+</IfModule>
+<IfModule mod_security.c>
+  SecFilterEngine Off
+  SecFilterScanPOST Off
+</IfModule>

@@ -1,0 +1,173 @@
+/**Any script needed needed specifically per site should be here **/
+/* 
+(c) 2018 Masterweb Solutions 
+Written by Ekene Onuorah
+masterweb.com.ng
+For CMS
+*/
+
+/**Body and title**/
+body{background:#FFF;margin:0px; font-family: 'Gotu', sans-serif;;font-size:18px;}
+.title-font{font-family: 'Staatliches', cursive;}
+.title{font-size:20px;font-weight:bold;display:inline;font-family: 'Staatliches', cursive;}
+
+
+/**Header of site**/
+.header-font{font-family: 'Oswald', sans-serif;}
+.header-box{width:100%;min-height:70px;background-color:#FF6;border-bottom:1px solid #CCC;box-shadow: 0px 2px 5px #999;font-family: 'Oswald', sans-serif;}
+
+.logo-box{width:100%;text-align:center;}
+.logo-box a img{width:100%;max-width:900px;}
+
+.header-top-links{display:block;middle;text-align:center;background:linear-gradient(to bottom, #063, #ff6);padding:5px 5px 10px 5px;min-height:25px;}
+.header-link{display:inline-block;vertical-align:middle;margin-left:10px;font-size:16px;}
+.header-link a{color:#fff;text-decoration:none;font-weight:bold;text-shadow:#000 1px 1px 1px;}
+
+.header-search{display:inline-block;vertical-align:middle;font-size:18px;color:#fff;text-decoration:none;cursor:pointer;position:absolute;top:3px;right:3px;}
+.header-fly-right{position:absolute;top:40px;right:0px;width:350px;background:#fff;min-height:100px;
+border:1px solid #999;box-shadow: 0px 2px 5px #999;padding:10px;z-index:910;display:none;}
+.flash-box{display:block;margin:3px 0px 3px 0px;padding:10px;background:#063;color:#FFF;text-align:center;}
+.admin-box{display:block;margin:3px 0px 3px 0px;padding:10px;background:#000;color:#FFF;text-align:center;}
+
+.close-btn{color:#F00;font-size:14px;font-weight:bold;cursor:pointer;padding-top:10px;text-align:right;padding-right:5px;}
+.header-close-menu-btn{display:none;}
+.header-menu-btn{display:none;}
+@media (max-width: 699px) {
+.header-close-menu-btn{display:block;}
+.header-menu-btn{display:block;position:absolute;top:3px;left:3px;color:#fff;cursor:pointer;font-size:1.5em;}
+.header-menu-area{padding-top:10px;display:none;}
+.header-search{font-size:1.4em;}
+.header-link{display:block;margin-top:10px;font-size:16px;text-align:left;}
+.header-link a{color:#fff;text-decoration:none;}
+}
+
+
+.home-main{max-width:80%;width:700px;margin:10px auto 10px auto;background:#fff;padding:10px;position:relative;top:-50px;z-index:1000;}
+.intro-title{text-align:center;font-size:1.3em;text-shadow:#000 1px 1px 1px;color:#096;}
+.intro-text{text-align:justify;}
+.home-middle{background:linear-gradient(to bottom, gold, #063);padding:10px;text-align:center;color:#FFF;margin-bottom:20px;}
+.home-middle .hmt{font-size:1.1em;font-weight:bold;font-family: 'Staatliches', cursive;}
+.home-middle .hmc{font-size:0.95em;}
+
+/**Layout of site**/
+/*All layouts could be given a white background if the body background has photos that may interfere with visibility*/
+
+@media (min-width: 1100px){
+.layout-holder{text-align:center;width:100%;max-width:1400px;margin:0px auto 0px auto;display:block;min-height:500px;}
+.layout-main{width:70%;max-width:800px;min-height:500px;display:inline-block;vertical-align:top;text-align:left;background:#fff;}
+.layout-sub{width:30%;max-width:300px;min-height:500px;display:inline-block;vertical-align:top;text-align:left;background:#fff;}
+
+.bloghome1{width:35%;display:inline-block;text-align:left;vertical-align:top;}
+.bloghome2{width:55%;display:inline-block;text-align:right;vertical-align:top;}
+.home-middle1{width:25%;display:inline-block;text-align:left;vertical-align:top;background:url(light-black-bg.png);border-radius:10px;padding:5px;min-height:200px;}
+.home-middle2{width:25%;display:inline-block;text-align:left;vertical-align:top;background:url(light-black-bg.png);border-radius:10px;padding:5px;min-height:200px;}
+.home-middle3{width:25%;display:inline-block;text-align:left;vertical-align:top;background:url(light-black-bg.png);border-radius:10px;padding:5px;min-height:200px;}
+
+
+} @media (min-width: 600px) and (max-width: 1099px) {
+.layout-holder{text-align:center;width:100%;display:block;min-height:500px;}
+.layout-main{width:60%;max-width:580px;min-height:500px;display:inline-block;vertical-align:top;text-align:left;float:left;background:#fff;}
+.layout-sub{width:40%;max-width:350px;min-height:500px;display:inline-block;vertical-align:top;text-align:left;float:right;background:#fff;}
+
+.bloghome1{padding-bottom:20px;}
+.bloghome2{padding-top:1px;}
+.home-middle1{padding-bottom:10px;text-align:left;}
+.home-middle2{padding-bottom:10px;text-align:left;}
+.home-middle3{padding-bottom:10px;text-align:left;}
+
+} @media (max-width: 599px) {
+.layout-holder{text-align:center;width:100%;display:block;min-height:500px;}
+.layout-main{width:100%;min-height:500px;display:block;vertical-align:top;text-align:left;background:#fff;margin-top:25px;position:relative;}
+.layout-sub{display:block;vertical-align:top;text-align:left;background:#fff;}
+
+.bloghome1{padding-bottom:20px;}
+.bloghome2{padding-top:1px;}
+.home-middle1{padding-bottom:10px;text-align:left;}
+.home-middle2{padding-bottom:10px;text-align:left;}
+.home-middle3{padding-bottom:10px;text-align:left;}
+}
+
+
+
+
+/*Quick Layouts that we can use anywhere inside... comes with natural padding*/
+.layout-full{padding:10px;text-align:left;}
+.layout-800{max-width:800px;padding:10px;text-align:left;margin:0px auto 0px auto;}
+.layout-600{max-width:600px;padding:10px;text-align:left;margin:0px auto 0px auto;}
+.layout-400{max-width:400px;padding:10px;text-align:left;margin:0px auto 0px auto;}
+.layout-admin-dash{display:block;margin-bottom:5px;padding:5px;vertical-align:top;}
+
+
+
+/**footer **/
+@media (min-width: 500px){
+.footer{width:100%;border-top:1px solid #999;padding-top:20px;background:gold;margin-top:30px;}
+.footer-holder{max-width:1000px;padding:10px;margin:0px auto 0px auto;}
+.footer-box{width:45%;display:inline-block;margin-bottom:20px;padding:0px 10px 0px 0px;vertical-align:top;}
+.footer-box .title{display:block;padding-bottom:7px;color:#333;width:100%;font-weight:bold;}
+.footer-box .link{display:inline-block;margin-right:8px;color:#555;font-size:0.85em;}
+} @media (max-width: 499px) {
+.footer{width:100%;border-top:1px solid #999;padding-top:20px;background:gold;margin-top:30px;}
+.footer-holder{max-width:1000px;padding:10px;margin:0px auto 0px auto;}
+.footer-box{display:block;margin-bottom:20px;vertical-align:top;}
+.footer-box .title{display:block;padding-bottom:7px;color:#333;width:100%;font-weight:bold;}
+.footer-box .link{display:inline-block;margin-right:8px;color:#555;font-size:0.85em;}
+}
+
+.footest{width:100%;padding:5px 0px 5px 0px;background:linear-gradient(to bottom, gold, #063);}
+.footest-holder{max-width:1000px;padding:0px 10px 0px 10px;margin:0px auto 0px auto;}
+.footest-holder .link{display:inline-block;margin-right:8px;color:#FFF;font-size:0.85em;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**boxes and tabs... white-box used in review**/
+.white-box{background:#fff;border:1px solid #ccc;border-radius:3px;min-height:20px;padding:10px;}
+.tab{padding:5px;border:1px solid #ddd;color:#777;background:#eee;cursor:pointer;display:block;}
+.tab:hover{border:1px solid #006;}
+.tab-active{color:#000;border:1px solid #006;background:#fff;}
+
+.browse-tabs{padding:10px;border:1px solid #ddd;color:#fff;background:#900;cursor:pointer;display:inline-block;
+		text-align:left;margin:0px auto 0px auto;max-width:300px;min-width:200px;}
+
+
+
+
+/*Gallery display*/
+.gallery-type-icon{color:#999;font-size:0.8em;}
+.gallery-type-title{color:#333;font-weight:bold;font-size:1.1em;padding:5px 0px 1px 0px;text-align:left;}
+.gallery-type-doc{max-width:98%;min-height:300px;}
+.gallery-holder-cont{height:200px;width:200px;margin:2px;overflow:hidden;display:inline-block;border-radius:5px;}
+.gallery-type-img{height:200px;max-width:1000px;}
+.gallery-type-vid{max-width:98%;}
+.gallery-type-aud{max-width:90%;}
+
+
+
+
+
+/*Posts*/
+.flat-post{background:#fff;border:1px solid #ccc;border-radius:3px;min-height:20px;padding:10px;margin:3px 0px 3px 0px;text-align:left;}
+.flat-post .post-title{font-weight:bold;color:#006;font-size:1.2em;}
+.flat-post .meta{color:#999;}
+
+.grid-post{max-width:300px;display:inline-block;margin:0px;height:250px;overflow:hidden;width:95%;text-align:center;background:#F7F7F7;}
+.grid-post .photo{width:95%;margin:0px auto 0px auto;height:190px;overflow:hidden;border-radius:10px;}
+.grid-post .photo img{height:100%;max-width:1000px;border-radius:10px;}
+.grid-post .post-title{padding-top:5px;color:#03F;font-size:1.2em;font-weight:bold;color:#006}
+
+
+

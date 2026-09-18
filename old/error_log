@@ -1,0 +1,72 @@
+[05-Jun-2026 11:03:26 Africa/Lagos] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'pingaagr_zvksdvhdb'@'162.241.85.37' (using password: YES) in /home2/pingaagro/public_html/config.php:8
+Stack trace:
+#0 /home2/pingaagro/public_html/config.php(8): mysqli_connect('pingaagro.com', 'pingaagr_zvksdv...', Object(SensitiveParameterValue), 'pingaagr_zvksdv...')
+#1 /home2/pingaagro/public_html/config.php(13): dbpass()
+#2 /home2/pingaagro/public_html/functions.php(2): include('/home2/pingaagr...')
+#3 /home2/pingaagro/public_html/dir.php(2): include('/home2/pingaagr...')
+#4 /home2/pingaagro/public_html/index.php(2): include('/home2/pingaagr...')
+#5 {main}
+  thrown in /home2/pingaagro/public_html/config.php on line 8
+[05-Jun-2026 11:10:56 Africa/Lagos] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'pingaagr_zvksdvhdb'@'162.241.85.37' (using password: YES) in /home2/pingaagro/public_html/config.php:8
+Stack trace:
+#0 /home2/pingaagro/public_html/config.php(8): mysqli_connect('pingaagro.com', 'pingaagr_zvksdv...', Object(SensitiveParameterValue), 'pingaagr_zvksdv...')
+#1 /home2/pingaagro/public_html/config.php(13): dbpass()
+#2 /home2/pingaagro/public_html/functions.php(2): include('/home2/pingaagr...')
+#3 /home2/pingaagro/public_html/dir.php(2): include('/home2/pingaagr...')
+#4 /home2/pingaagro/public_html/index.php(2): include('/home2/pingaagr...')
+#5 {main}
+  thrown in /home2/pingaagro/public_html/config.php on line 8
+[05-Jun-2026 11:11:09 Africa/Lagos] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'pingaagr_zvksdvhdb'@'162.241.85.37' (using password: YES) in /home2/pingaagro/public_html/config.php:8
+Stack trace:
+#0 /home2/pingaagro/public_html/config.php(8): mysqli_connect('pingaagro.com', 'pingaagr_zvksdv...', Object(SensitiveParameterValue), 'pingaagr_zvksdv...')
+#1 /home2/pingaagro/public_html/config.php(13): dbpass()
+#2 /home2/pingaagro/public_html/functions.php(2): include('/home2/pingaagr...')
+#3 /home2/pingaagro/public_html/dir.php(2): include('/home2/pingaagr...')
+#4 /home2/pingaagro/public_html/index.php(2): include('/home2/pingaagr...')
+#5 {main}
+  thrown in /home2/pingaagro/public_html/config.php on line 8
+[05-Jun-2026 11:14:45 Africa/Lagos] PHP Fatal error:  Uncaught mysqli_sql_exception: php_network_getaddresses: getaddrinfo for https failed: Name or service not known in /home2/pingaagro/public_html/config.php:8
+Stack trace:
+#0 /home2/pingaagro/public_html/config.php(8): mysqli_connect('https://pingaag...', 'pingaagr_zvksdv...', Object(SensitiveParameterValue), 'pingaagr_zvksdv...')
+#1 /home2/pingaagro/public_html/config.php(13): dbpass()
+#2 /home2/pingaagro/public_html/functions.php(2): include('/home2/pingaagr...')
+#3 /home2/pingaagro/public_html/dir.php(2): include('/home2/pingaagr...')
+#4 /home2/pingaagro/public_html/index.php(2): include('/home2/pingaagr...')
+#5 {main}
+  thrown in /home2/pingaagro/public_html/config.php on line 8
+[05-Jun-2026 11:14:48 Africa/Lagos] PHP Fatal error:  Uncaught mysqli_sql_exception: php_network_getaddresses: getaddrinfo for https failed: Name or service not known in /home2/pingaagro/public_html/config.php:8
+Stack trace:
+#0 /home2/pingaagro/public_html/config.php(8): mysqli_connect('https://pingaag...', 'pingaagr_zvksdv...', Object(SensitiveParameterValue), 'pingaagr_zvksdv...')
+#1 /home2/pingaagro/public_html/config.php(13): dbpass()
+#2 /home2/pingaagro/public_html/functions.php(2): include('/home2/pingaagr...')
+#3 /home2/pingaagro/public_html/dir.php(2): include('/home2/pingaagr...')
+#4 /home2/pingaagro/public_html/index.php(2): include('/home2/pingaagr...')
+#5 {main}
+  thrown in /home2/pingaagro/public_html/config.php on line 8
+[05-Jun-2026 11:14:50 Africa/Lagos] PHP Fatal error:  Uncaught mysqli_sql_exception: php_network_getaddresses: getaddrinfo for https failed: Name or service not known in /home2/pingaagro/public_html/config.php:8
+Stack trace:
+#0 /home2/pingaagro/public_html/config.php(8): mysqli_connect('https://pingaag...', 'pingaagr_zvksdv...', Object(SensitiveParameterValue), 'pingaagr_zvksdv...')
+#1 /home2/pingaagro/public_html/config.php(13): dbpass()
+#2 /home2/pingaagro/public_html/functions.php(2): include('/home2/pingaagr...')
+#3 /home2/pingaagro/public_html/dir.php(2): include('/home2/pingaagr...')
+#4 /home2/pingaagro/public_html/index.php(2): include('/home2/pingaagr...')
+#5 {main}
+  thrown in /home2/pingaagro/public_html/config.php on line 8
+[05-Jun-2026 11:14:53 Africa/Lagos] PHP Fatal error:  Uncaught mysqli_sql_exception: php_network_getaddresses: getaddrinfo for https failed: Name or service not known in /home2/pingaagro/public_html/config.php:8
+Stack trace:
+#0 /home2/pingaagro/public_html/config.php(8): mysqli_connect('https://pingaag...', 'pingaagr_zvksdv...', Object(SensitiveParameterValue), 'pingaagr_zvksdv...')
+#1 /home2/pingaagro/public_html/config.php(13): dbpass()
+#2 /home2/pingaagro/public_html/functions.php(2): include('/home2/pingaagr...')
+#3 /home2/pingaagro/public_html/dir.php(2): include('/home2/pingaagr...')
+#4 /home2/pingaagro/public_html/index.php(2): include('/home2/pingaagr...')
+#5 {main}
+  thrown in /home2/pingaagro/public_html/config.php on line 8
+[05-Jun-2026 11:15:19 Africa/Lagos] PHP Fatal error:  Uncaught mysqli_sql_exception: php_network_getaddresses: getaddrinfo for http failed: Name or service not known in /home2/pingaagro/public_html/config.php:8
+Stack trace:
+#0 /home2/pingaagro/public_html/config.php(8): mysqli_connect('http://pingaagr...', 'pingaagr_zvksdv...', Object(SensitiveParameterValue), 'pingaagr_zvksdv...')
+#1 /home2/pingaagro/public_html/config.php(13): dbpass()
+#2 /home2/pingaagro/public_html/functions.php(2): include('/home2/pingaagr...')
+#3 /home2/pingaagro/public_html/dir.php(2): include('/home2/pingaagr...')
+#4 /home2/pingaagro/public_html/index.php(2): include('/home2/pingaagr...')
+#5 {main}
+  thrown in /home2/pingaagro/public_html/config.php on line 8

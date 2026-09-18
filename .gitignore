@@ -5,6 +5,7 @@
 .user.ini
 error_log
 php.ini
+logo-redesign.jpeg
 
 # Runtime uploads and generated files
 /uploads/*

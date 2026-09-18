@@ -1,5 +1,8 @@
 <?php
 
+require_once __DIR__ . '/../app/core/Env.php';
+Env::load(__DIR__ . '/../.env');
+
 // ── Environment ────────────────────────────────────────────
 define('ENVIRONMENT', 'development');
 
@@ -20,9 +23,9 @@ ini_set('session.use_only_cookies', 1);
 define('URLROOT', 'http://pingaagro.test');
 define('SITENAME', 'Pinga Agro Investment Limited');
 define('RC_NUMBER',  'RC 1322122');
-define('PHONE',      '+234 701 197 2420'); // awaiting from client
-define('EMAIL',      'info@pingaagro.com'); // awaiting from client
-define('WHATSAPP',   ''); // awaiting from client
+define('PHONE',    getenv('PHONE'));
+define('EMAIL',    getenv('EMAIL'));
+define('WHATSAPP', getenv('WHATSAPP'));
 define('ADDRESS_1',  'Mile 2 Ahani, Oji River LGA, Enugu State');
 define('ADDRESS_2',  'Akpugoeze-Ufuma Road, Ufuma, Anambra State');
 
@@ -36,9 +39,9 @@ define('DB_NAME', 'pingaagro');
 define('YOUTUBE_EMBED_URL', 'https://www.youtube.com/embed/Rufv0ew0u_w');
 
 // ── Email ──────────────────────────────────────────────────
-define('ADMIN_EMAIL', 'info@pingaagro.com');
-define('FROM_EMAIL',  'noreply@pingaagro.com');
-define('FROM_NAME',   'Pinga Agro Ltd');
+define('ADMIN_EMAIL', getenv('ADMIN_EMAIL') ?: 'info@pingaagro.com');
+define('FROM_EMAIL',  getenv('FROM_EMAIL')  ?: 'noreply@pingaagro.com');
+define('FROM_NAME',  'Pinga Agro Ltd');
 
 // ── Error Display ──────────────────────────────────────────
 if (ENVIRONMENT === 'development') {

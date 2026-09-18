@@ -1,7 +1,10 @@
 # Environment and local configuration
 .env
 .env.*
-!.env.example
+.htaccess
+.user.ini
+error_log
+php.ini
 
 # Runtime uploads and generated files
 /uploads/*
@@ -27,3 +30,4 @@
 Thumbs.db
 *.swp
 *.swo
+.public.zip

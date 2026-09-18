@@ -1,6 +1,19 @@
 <?php
+
+require_once __DIR__ . '/../app/core/Env.php';
+Env::load(__DIR__ . '/../.env');
+
 // ── Environment ────────────────────────────────────────────
-define('ENVIRONMENT', 'production');
+define('ENVIRONMENT', getenv('APP_ENV'));
+
+// ── Error Display ──────────────────────────────────────────
+if (ENVIRONMENT === 'development') {
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
+} else {
+    error_reporting(0);
+    ini_set('display_errors', 0);
+}
 
 // ── Session Security ─────────────────────────────────────────
 session_set_cookie_params([
@@ -16,37 +29,28 @@ ini_set('session.use_strict_mode',  1);
 ini_set('session.use_only_cookies', 1);
 
 // ── URLs ───────────────────────────────────────────────────
-define('URLROOT', 'https://new.pingaagro.com');
+define('URLROOT', getenv('URLROOT'));
 define('SITENAME', 'Pinga Agro Investment Limited');
 define('RC_NUMBER',  'RC 1322122');
-define('PHONE',      '+234 701 197 2420');
-define('EMAIL',      'info@pingaagro.com');
-define('WHATSAPP',   '');
+define('PHONE',    getenv('PHONE'));
+define('EMAIL',    getenv('EMAIL'));
+define('WHATSAPP', getenv('WHATSAPP'));
 define('ADDRESS_1',  'Mile 2 Ahani, Oji River LGA, Enugu State');
 define('ADDRESS_2',  'Akpugoeze-Ufuma Road, Ufuma, Anambra State');
 
 // ── Database ───────────────────────────────────────────────
-define('DB_HOST', 'localhost');
-define('DB_USER', 'pingaagr_axehrazdb');
-define('DB_PASS', 'YlD7$#im!');
-define('DB_NAME', 'pingaagr_axehrazdb');
+define('DB_HOST', getenv('DB_HOST'));
+define('DB_USER', getenv('DB_USER'));
+define('DB_PASS', getenv('DB_PASS'));
+define('DB_NAME', getenv('DB_NAME'));
 
 // ── Video ───────────────────────────────────────────────────
 define('YOUTUBE_EMBED_URL', 'https://www.youtube.com/embed/Rufv0ew0u_w');
 
 // ── Email ──────────────────────────────────────────────────
-define('ADMIN_EMAIL', 'info@pingaagro.com');
-define('FROM_EMAIL',  'noreply@pingaagro.com');
+define('ADMIN_EMAIL', getenv('ADMIN_EMAIL'));
+define('FROM_EMAIL', getenv('FROM_EMAIL'));
 define('FROM_NAME',   'Pinga Agro Ltd');
-
-// ── Error Display ──────────────────────────────────────────
-if (ENVIRONMENT === 'development') {
-    error_reporting(E_ALL);
-    ini_set('display_errors', 1);
-} else {
-    error_reporting(0);
-    ini_set('display_errors', 0);
-}
 
 // ── Security Headers ────────────────────────────────────────
 if (ENVIRONMENT === 'production') {

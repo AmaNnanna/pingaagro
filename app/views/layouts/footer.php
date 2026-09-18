@@ -94,6 +94,9 @@
 
 <?php elseif (strpos($currentUrl, 'review/create') === 0): ?>
     <script src="<?= URLROOT ?>/js/review.js"></script>
+
+<?php elseif ($currentUrl === 'about'): ?>
+    <script src="<?= URLROOT ?>/js/gallery.js"></script>
 <?php endif; ?>
 
 <!-- ═════ CHAT WIDGET ════════ -->

@@ -90,6 +90,7 @@ ul {
     height        : 100vh;
     overflow-y    : auto;
     z-index       : 100;
+    transition    : transform 0.3s ease;
 }
 
 .sidebar-brand {
@@ -398,6 +399,16 @@ ul {
     color     : var(--a-warn-text);
 }
 
+.badge--super_admin {
+    background: var(--a-gold);
+    color     : var(--a-white);
+}
+
+.badge--admin {
+    background: var(--a-green-light);
+    color     : var(--a-green-dark);
+}
+
 /* ── Admin Gallery Grid ───────────────────────────────────── */
 .admin-gallery-grid {
     display              : grid;
@@ -423,7 +434,7 @@ ul {
     width     : 100%;
     height    : 100%;
     object-fit: cover;
-    transition : transform 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 .admin-gallery-item:hover .admin-gallery-item__img img {
@@ -431,10 +442,10 @@ ul {
 }
 
 .admin-gallery-item__info {
-    padding        : 0.75rem;
-    display        : flex;
-    flex-direction : column;
-    gap            : 0.2rem;
+    padding       : 0.75rem;
+    display       : flex;
+    flex-direction: column;
+    gap           : 0.2rem;
 }
 
 .admin-gallery-item__caption {
@@ -449,28 +460,28 @@ ul {
 }
 
 .admin-gallery-item__filename {
-    font-size: 0.7rem;
-    color    : var(--a-text-muted);
+    font-size : 0.7rem;
+    color     : var(--a-text-muted);
     word-break: break-all;
 }
 
 .admin-gallery-item__delete {
-    position  : absolute;
-    top       : 0.5rem;
-    right     : 0.5rem;
-    width     : 30px;
-    height    : 30px;
-    border    : none;
-    background: rgba(198,40,40,0.85);
-    color     : white;
-    border-radius: 50%;
-    font-size : 0.8rem;
-    cursor    : pointer;
-    display   : flex;
+    position       : absolute;
+    top            : 0.5rem;
+    right          : 0.5rem;
+    width          : 30px;
+    height         : 30px;
+    border         : none;
+    background     : rgba(198, 40, 40, 0.85);
+    color          : white;
+    border-radius  : 50%;
+    font-size      : 0.8rem;
+    cursor         : pointer;
+    display        : flex;
     align-items    : center;
     justify-content: center;
-    opacity   : 0;
-    transition: opacity 0.2s ease;
+    opacity        : 0;
+    transition     : opacity 0.2s ease;
 }
 
 .admin-gallery-item:hover .admin-gallery-item__delete {
@@ -479,8 +490,8 @@ ul {
 
 /* File Upload Area */
 .file-upload-area {
-    position: relative;
-    border  : 2px dashed var(--a-border);
+    position     : relative;
+    border       : 2px dashed var(--a-border);
     border-radius: var(--a-radius);
     background   : var(--a-bg);
     transition   : var(--a-transition);
@@ -514,11 +525,19 @@ ul {
     gap            : 0.25rem;
 }
 
-.file-upload-area__label strong { color: var(--a-green-dark); }
-.file-upload-area__label small  { display: block; font-size: 0.75rem; }
+.file-upload-area__label strong {
+    color: var(--a-green-dark);
+}
+
+.file-upload-area__label small {
+    display  : block;
+    font-size: 0.75rem;
+}
 
 @media (max-width: 1024px) {
-    .admin-gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .admin-gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 /* ── ACTION BUTTONS (in tables) ───────────────────────────── */
@@ -869,6 +888,79 @@ ul {
     background: var(--a-white);
 }
 
+/* ── MOBILE NAV TOGGLE ────────────────────────────────────── */
+.admin-hamburger {
+    display        : none;
+    position       : fixed;
+    top            : 0.85rem;
+    left           : 1rem;
+    z-index        : 150;
+    width          : 40px;
+    height         : 40px;
+    align-items    : center;
+    justify-content: center;
+    background     : var(--a-sidebar-bg);
+    border         : none;
+    border-radius  : var(--a-radius);
+    cursor         : pointer;
+    box-shadow     : var(--a-shadow);
+}
+
+.admin-hamburger span {
+    display   : block;
+    width     : 20px;
+    height    : 2px;
+    background: var(--a-white);
+    position  : relative;
+    transition: var(--a-transition);
+}
+
+.admin-hamburger span::before,
+.admin-hamburger span::after {
+    content   : '';
+    position  : absolute;
+    left      : 0;
+    width     : 20px;
+    height    : 2px;
+    background: var(--a-white);
+    transition: var(--a-transition);
+}
+
+.admin-hamburger span::before {
+    top: -6px;
+}
+
+.admin-hamburger span::after {
+    top: 6px;
+}
+
+/* Turns into an X when the menu is open */
+.admin-hamburger.is-active span {
+    background: transparent;
+}
+
+.admin-hamburger.is-active span::before {
+    transform: rotate(45deg);
+    top      : 0;
+}
+
+.admin-hamburger.is-active span::after {
+    transform: rotate(-45deg);
+    top      : 0;
+}
+
+.admin-sidebar-overlay {
+    display   : none;
+    position  : fixed;
+    inset     : 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index   : 99;
+}
+
+.admin-sidebar-overlay.is-visible {
+    display: block;
+}
+
 /* ── Responsive ───────────────────────────────────────────── */
 @media (max-width: 1024px) {
     .stats-grid {
@@ -889,11 +981,28 @@ ul {
         transform: translateX(-100%);
     }
 
+    .admin-sidebar.is-open {
+        transform : translateX(0);
+        box-shadow: var(--a-shadow-md);
+    }
+
     .admin-main {
         margin-left: 0;
+    }
+
+    .admin-hamburger {
+        display: flex;
+    }
+
+    .admin-topbar {
+        padding-left: 4rem;
     }
 
     .stats-grid {
         grid-template-columns: 1fr 1fr;
     }
+}
+
+body.admin-no-scroll {
+    overflow: hidden;
 }

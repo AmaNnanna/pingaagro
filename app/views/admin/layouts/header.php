@@ -13,6 +13,13 @@
 
 <body>
 
+    <button type="button" class="admin-hamburger" id="adminHamburger"
+        aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+    </button>
+
+    <div class="admin-sidebar-overlay" id="adminSidebarOverlay"></div>
+
     <?php
     $currentUrl = isset($_GET['url']) ? trim($_GET['url'], '/') : '';
     $adminName  = $_SESSION['admin_name']  ?? 'Admin';
@@ -22,7 +29,7 @@
     <div class="admin-wrapper">
 
         <!-- ── SIDEBAR ─────────────────────────────────────── -->
-        <aside class="admin-sidebar">
+        <aside class="admin-sidebar" id="adminSidebar">
 
             <div class="sidebar-brand">
                 <img src="<?= URLROOT ?>/images/logo.png" alt="Pinga Agro">
@@ -62,8 +69,22 @@
                     </a>
                 </div>
 
+                <?php if (($_SESSION['admin_role'] ?? '') === 'super_admin'): ?>
+                    <div class="sidebar-nav-group">
+                        <span class="sidebar-nav-label">Administration</span>
+                        <a href="<?= URLROOT ?>/admin/admins"
+                            class="sidebar-link <?= (strpos($currentUrl, 'admin/admins') === 0) ? 'active' : '' ?>">
+                            <span class="icon">🛡️</span> Admins
+                        </a>
+                    </div>
+                <?php endif; ?>
+
                 <div class="sidebar-nav-group">
                     <span class="sidebar-nav-label">Site</span>
+                    <a href="<?= URLROOT ?>/admin/account"
+                        class="sidebar-link <?= ($currentUrl === 'admin/account') ? 'active' : '' ?>">
+                        <span class="icon">👤</span> My Account
+                    </a>
                     <a href="<?= URLROOT ?>/" target="_blank" class="sidebar-link">
                         <span class="icon">🌐</span> View Website
                     </a>

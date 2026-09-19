@@ -32,6 +32,21 @@ class AdminController extends Controller
         $this->checkSessionTimeout();
     }
 
+    /**
+     * Call at the top of any method only super admins may use.
+     * If finer-grained permissions are added later, only this method —
+     * and the session data set at login — need to change.
+     */
+    private function requireSuperAdmin(): void
+    {
+        $this->requireAuth();
+
+        if (($_SESSION['admin_role'] ?? '') !== 'super_admin') {
+            http_response_code(403);
+            die('You do not have permission to access this page.');
+        }
+    }
+
     // ── DASHBOARD ───────────────────────────────────────────
     public function index(): void
     {
@@ -107,6 +122,7 @@ class AdminController extends Controller
                     $_SESSION['admin_id']        = $user->id;
                     $_SESSION['admin_name']      = $user->name;
                     $_SESSION['admin_email']     = $user->email;
+                    $_SESSION['admin_role']      = $user->role ?? 'admin';
                     $_SESSION['last_activity']   = time();
                     $this->redirect(URLROOT . '/admin');
                 } else {
@@ -463,5 +479,147 @@ class AdminController extends Controller
         }
 
         $this->redirect(URLROOT . '/admin/gallery');
+    }
+
+    // ── ADMIN MANAGEMENT (super admins only) ─────────────────
+    public function admins(): void
+    {
+        $this->requireSuperAdmin();
+
+        $data = [
+            'title'     => 'Admins | Admin',
+            'admins'    => $this->adminModel->getAll(),
+            'adminName' => $_SESSION['admin_name'] ?? 'Admin',
+            'flash'     => $_SESSION['flash'] ?? null,
+            'errors'    => [],
+            'old'       => [],
+        ];
+
+        unset($_SESSION['flash']);
+
+        $this->view('admin/admins/index', $data, 'admin');
+    }
+
+    public function newadmin(): void
+    {
+        $this->requireSuperAdmin();
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $old = [
+                'name'  => trim($_POST['name']  ?? ''),
+                'email' => trim($_POST['email'] ?? ''),
+                'role'  => ($_POST['role'] ?? '') === 'super_admin' ? 'super_admin' : 'admin',
+            ];
+            $password = $_POST['password'] ?? '';
+            $errors   = $this->validateNewAdmin($old, $password);
+
+            if (empty($errors)) {
+                if ($this->adminModel->create($old['name'], $old['email'], $password, $old['role'])) {
+                    $_SESSION['flash'] = ['type' => 'success', 'msg' => 'Admin account created.'];
+                    $this->redirect(URLROOT . '/admin/admins');
+                } else {
+                    $errors[] = 'Failed to create the admin account. Please try again.';
+                }
+            }
+
+            $_SESSION['flash'] = ['type' => 'error', 'msg' => implode(' ', $errors)];
+            $this->redirect(URLROOT . '/admin/admins');
+        }
+
+        $this->redirect(URLROOT . '/admin/admins');
+    }
+
+    public function deleteadmin(int $id): void
+    {
+        $this->requireSuperAdmin();
+
+        if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+            $this->redirect(URLROOT . '/admin/admins');
+        }
+
+        if ($id === (int) ($_SESSION['admin_id'] ?? 0)) {
+            $_SESSION['flash'] = ['type' => 'error', 'msg' => 'You cannot delete your own account while logged in.'];
+            $this->redirect(URLROOT . '/admin/admins');
+        }
+
+        $target = $this->adminModel->findById($id);
+
+        if ($target && $target->role === 'super_admin' && $this->adminModel->countSuperAdmins() <= 1) {
+            $_SESSION['flash'] = ['type' => 'error', 'msg' => 'You cannot delete the last super admin.'];
+            $this->redirect(URLROOT . '/admin/admins');
+        }
+
+        if ($this->adminModel->delete($id)) {
+            $_SESSION['flash'] = ['type' => 'success', 'msg' => 'Admin account deleted.'];
+        } else {
+            $_SESSION['flash'] = ['type' => 'error', 'msg' => 'Could not delete that account.'];
+        }
+
+        $this->redirect(URLROOT . '/admin/admins');
+    }
+
+    private function validateNewAdmin(array $data, string $password): array
+    {
+        $errors = [];
+
+        if (empty($data['name'])) {
+            $errors[] = 'Name is required.';
+        }
+
+        if (empty($data['email']) || !filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
+            $errors[] = 'A valid email address is required.';
+        } elseif ($this->adminModel->emailExists($data['email'])) {
+            $errors[] = 'An admin with that email already exists.';
+        }
+
+        if (strlen($password) < 8) {
+            $errors[] = 'Password must be at least 8 characters.';
+        }
+
+        return $errors;
+    }
+
+    // ── ACCOUNT / PASSWORD (any logged-in admin) ─────────────
+    public function account(): void
+    {
+        $this->requireAuth();
+
+        $data = [
+            'title'     => 'My Account | Admin',
+            'adminName' => $_SESSION['admin_name'] ?? 'Admin',
+            'flash'     => $_SESSION['flash'] ?? null,
+        ];
+
+        unset($_SESSION['flash']);
+
+        $this->view('admin/account', $data, 'admin');
+    }
+
+    public function updatepassword(): void
+    {
+        $this->requireAuth();
+
+        if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+            $this->redirect(URLROOT . '/admin/account');
+        }
+
+        $current = $_POST['current_password'] ?? '';
+        $new     = $_POST['new_password']     ?? '';
+        $confirm = $_POST['confirm_password'] ?? '';
+
+        $user = $this->adminModel->findById((int) $_SESSION['admin_id']);
+
+        if (!$user || !password_verify($current, $user->password)) {
+            $_SESSION['flash'] = ['type' => 'error', 'msg' => 'Current password is incorrect.'];
+        } elseif (strlen($new) < 8) {
+            $_SESSION['flash'] = ['type' => 'error', 'msg' => 'New password must be at least 8 characters.'];
+        } elseif ($new !== $confirm) {
+            $_SESSION['flash'] = ['type' => 'error', 'msg' => 'New password and confirmation do not match.'];
+        } else {
+            $this->adminModel->updatePassword($user->id, $new);
+            $_SESSION['flash'] = ['type' => 'success', 'msg' => 'Password updated successfully.'];
+        }
+
+        $this->redirect(URLROOT . '/admin/account');
     }
 }

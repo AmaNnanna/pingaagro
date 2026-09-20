@@ -1,5 +1,5 @@
 <!-- Quill CSS -->
-<link href="https://cdn.quilljs.com/1.3.7/quill.snow.css" rel="stylesheet">
+<link href="<?= URLROOT ?>/vendor/quill/quill.snow.css" rel="stylesheet">
 
 <!-- Topbar -->
 <div class="admin-topbar">
@@ -143,7 +143,63 @@
     &copy; <?= date('Y') ?> Pinga Agro Investment Limited — Admin Panel
 </footer>
 
-<script src="https://cdn.quilljs.com/1.3.7/quill.min.js"></script>
+<!-- Media Insert Modals (used by the post editor) -->
+<div class="editor-modal-overlay" id="mediaModalOverlay"></div>
+
+<div class="editor-modal" id="imageModal">
+    <div class="editor-modal__header">
+        <h4>Insert Image</h4>
+        <button type="button" class="editor-modal__close" data-close-modal>&times;</button>
+    </div>
+    <div class="editor-modal__tabs">
+        <button type="button" class="editor-modal__tab is-active" data-tab="upload">Upload New</button>
+        <button type="button" class="editor-modal__tab" data-tab="gallery">Choose from Gallery</button>
+    </div>
+    <div class="editor-modal__body">
+        <div class="editor-modal__pane is-active" data-pane="upload">
+            <input type="file" id="imageUploadInput" accept="image/jpeg,image/png,image/webp,image/gif">
+            <p class="form-hint">JPG, PNG, WebP, or GIF — max 5MB.</p>
+            <p class="editor-modal__error" id="imageUploadError"></p>
+        </div>
+        <div class="editor-modal__pane" data-pane="gallery">
+            <div class="editor-modal__gallery-grid" id="galleryPickerGrid">
+                <p class="form-hint">Loading gallery…</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="editor-modal" id="videoModal">
+    <div class="editor-modal__header">
+        <h4>Insert Video</h4>
+        <button type="button" class="editor-modal__close" data-close-modal>&times;</button>
+    </div>
+    <div class="editor-modal__tabs">
+        <button type="button" class="editor-modal__tab is-active" data-tab="embed">Embed Link</button>
+        <button type="button" class="editor-modal__tab" data-tab="upload">Upload File</button>
+    </div>
+    <div class="editor-modal__body">
+        <div class="editor-modal__pane is-active" data-pane="embed">
+            <label for="videoEmbedInput">YouTube or Vimeo URL</label>
+            <input type="text" id="videoEmbedInput" placeholder="https://www.youtube.com/watch?v=…">
+            <button type="button" class="btn-admin btn-admin--primary" id="videoEmbedSubmit" style="margin-top:0.75rem;">Insert</button>
+            <p class="editor-modal__error" id="videoEmbedError"></p>
+        </div>
+        <div class="editor-modal__pane" data-pane="upload">
+            <input type="file" id="videoUploadInput" accept="video/mp4,video/webm">
+            <p class="form-hint">MP4 or WebM — max 50MB.</p>
+            <p class="editor-modal__error" id="videoUploadError"></p>
+        </div>
+    </div>
+</div>
+
+<!-- Quill JS -->
+<script src="<?= URLROOT ?>/vendor/quill/quill.min.js"></script>
+<script>
+    window.URLROOT = <?= json_encode(URLROOT) ?>;
+</script>
+<script src="<?= URLROOT ?>/js/post-editor.js"></script>
+
 <script>
     const quill = new Quill('#editor', {
         theme: 'snow',
@@ -159,7 +215,7 @@
                 }, {
                     list: 'bullet'
                 }],
-                ['link'],
+                ['link', 'image', 'video'],
                 ['clean']
             ]
         }
@@ -171,6 +227,9 @@
     document.getElementById('postForm').addEventListener('submit', function() {
         document.getElementById('body').value = quill.root.innerHTML;
     });
+
+    // Hook up the image/video toolbar buttons to the media modals
+    initPostMediaTools(quill);
 
     // Slug preview updater
     const slugInput = document.getElementById('slug');

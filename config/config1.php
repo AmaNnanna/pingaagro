@@ -15,6 +15,14 @@ if (ENVIRONMENT === 'development') {
     ini_set('display_errors', 0);
 }
 
+$logDir = BASEPATH . 'logs';
+if (!is_dir($logDir)) {
+    mkdir($logDir, 0755, true);
+}
+
+ini_set('log_errors', 1);
+ini_set('error_log', $logDir . '/error_log');
+
 // ── Session Security ─────────────────────────────────────────
 session_set_cookie_params([
     'lifetime' => 0,
@@ -64,11 +72,11 @@ if (ENVIRONMENT === 'production') {
     header(
         "Content-Security-Policy: "
             . "default-src 'self'; "
-            . "script-src 'self' 'unsafe-inline' https://cdn.quilljs.com https://fonts.googleapis.com; "
-            . "style-src 'self' 'unsafe-inline' https://cdn.quilljs.com https://fonts.googleapis.com https://fonts.gstatic.com; "
+            . "script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; "
+            . "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com; "
             . "font-src 'self' https://fonts.gstatic.com; "
             . "img-src 'self' data:; "
-            . "frame-src https://www.youtube.com; "
+            . "frame-src https://www.youtube.com https://player.vimeo.com; "
             . "connect-src 'self';"
     );
 

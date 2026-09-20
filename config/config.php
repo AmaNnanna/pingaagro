@@ -6,6 +6,23 @@ Env::load(__DIR__ . '/../.env');
 // ── Environment ────────────────────────────────────────────
 define('ENVIRONMENT', 'development');
 
+// ── Error Display ──────────────────────────────────────────
+if (ENVIRONMENT === 'development') {
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
+} else {
+    error_reporting(0);
+    ini_set('display_errors', 0);
+}
+
+$logDir = BASEPATH . 'logs';
+if (!is_dir($logDir)) {
+    mkdir($logDir, 0755, true);
+}
+
+ini_set('log_errors', 1);
+ini_set('error_log', $logDir . '/error_log');
+
 // ── Session Security ─────────────────────────────────────────
 session_set_cookie_params([
     'lifetime' => 0,
@@ -43,15 +60,6 @@ define('ADMIN_EMAIL', getenv('ADMIN_EMAIL') ?: 'info@pingaagro.com');
 define('FROM_EMAIL',  getenv('FROM_EMAIL')  ?: 'noreply@pingaagro.com');
 define('FROM_NAME',  'Pinga Agro Ltd');
 
-// ── Error Display ──────────────────────────────────────────
-if (ENVIRONMENT === 'development') {
-    error_reporting(E_ALL);
-    ini_set('display_errors', 1);
-} else {
-    error_reporting(0);
-    ini_set('display_errors', 0);
-}
-
 // ── Security Headers ────────────────────────────────────────
 // These headers tell the browser how to behave when rendering your pages.
 // They are sent with every response.
@@ -76,11 +84,11 @@ if (ENVIRONMENT === 'production') {
     header(
         "Content-Security-Policy: "
             . "default-src 'self'; "
-            . "script-src 'self' 'unsafe-inline' https://cdn.quilljs.com https://fonts.googleapis.com; "
-            . "style-src 'self' 'unsafe-inline' https://cdn.quilljs.com https://fonts.googleapis.com https://fonts.gstatic.com; "
+            . "script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; "
+            . "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com; "
             . "font-src 'self' https://fonts.gstatic.com; "
             . "img-src 'self' data:; "
-            . "frame-src https://www.youtube.com; "
+            . "frame-src https://www.youtube.com https://player.vimeo.com; "
             . "connect-src 'self';"
     );
 

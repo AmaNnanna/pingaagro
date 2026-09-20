@@ -961,6 +961,136 @@ ul {
     display: block;
 }
 
+/* ── EDITOR MEDIA MODALS (Insert Image / Insert Video) ───────── */
+.editor-modal-overlay {
+    display   : none;
+    position  : fixed;
+    inset     : 0;
+    background: rgba(0, 0, 0, 0.55);
+    z-index   : 200;
+}
+
+.editor-modal-overlay.is-visible {
+    display: block;
+}
+
+.editor-modal {
+    display      : none;
+    position     : fixed;
+    top          : 50%;
+    left         : 50%;
+    transform    : translate(-50%, -50%);
+    width        : 90%;
+    max-width    : 480px;
+    max-height   : 80vh;
+    overflow-y   : auto;
+    background   : var(--a-white);
+    border-radius: var(--a-radius);
+    box-shadow   : var(--a-shadow-md);
+    z-index      : 201;
+}
+
+.editor-modal.is-visible {
+    display: block;
+}
+
+.editor-modal__header {
+    display        : flex;
+    align-items    : center;
+    justify-content: space-between;
+    padding        : 1rem 1.25rem;
+    border-bottom  : 1px solid var(--a-border);
+}
+
+.editor-modal__header h4 {
+    margin   : 0;
+    font-size: 1rem;
+    color    : var(--a-text-dark);
+}
+
+.editor-modal__close {
+    background : none;
+    border     : none;
+    font-size  : 1.5rem;
+    line-height: 1;
+    cursor     : pointer;
+    color      : var(--a-text-muted);
+}
+
+.editor-modal__tabs {
+    display      : flex;
+    border-bottom: 1px solid var(--a-border);
+}
+
+.editor-modal__tab {
+    flex         : 1;
+    padding      : 0.65rem;
+    background   : none;
+    border       : none;
+    font-size    : 0.85rem;
+    font-weight  : 600;
+    color        : var(--a-text-muted);
+    cursor       : pointer;
+    border-bottom: 2px solid transparent;
+}
+
+.editor-modal__tab.is-active {
+    color              : var(--a-green-dark);
+    border-bottom-color: var(--a-green-dark);
+}
+
+.editor-modal__body {
+    padding: 1.25rem;
+}
+
+.editor-modal__pane {
+    display: none;
+}
+
+.editor-modal__pane.is-active {
+    display: block;
+}
+
+.editor-modal__error {
+    color     : #b91c1c;
+    font-size : 0.8rem;
+    margin-top: 0.5rem;
+}
+
+.editor-modal__gallery-grid {
+    display              : grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap                  : 0.5rem;
+    max-height           : 320px;
+    overflow-y           : auto;
+}
+
+.editor-modal__gallery-item {
+    padding      : 0;
+    border       : 2px solid transparent;
+    border-radius: 6px;
+    overflow     : hidden;
+    cursor       : pointer;
+    background   : none;
+    aspect-ratio : 1;
+}
+
+.editor-modal__gallery-item:hover {
+    border-color: var(--a-gold);
+}
+
+.editor-modal__gallery-item img {
+    width     : 100%;
+    height    : 100%;
+    object-fit: cover;
+}
+
+.post-content-video {
+    max-width    : 100%;
+    border-radius: 8px;
+    margin       : 1rem 0;
+}
+
 /* ── Responsive ───────────────────────────────────────────── */
 @media (max-width: 1024px) {
     .stats-grid {

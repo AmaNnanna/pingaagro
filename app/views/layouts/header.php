@@ -14,6 +14,7 @@
     ?>
 
     <!-- ── Core CSS (loaded on every page) ─────────────────── -->
+     <link rel="stylesheet" href="<?= URLROOT ?>/css/fonts.css">
     <link rel="stylesheet" href="<?= URLROOT ?>/css/style.css">
     <link rel="stylesheet" href="<?= URLROOT ?>/css/components.css">
     <link rel="stylesheet" href="<?= URLROOT ?>/css/animations.css">

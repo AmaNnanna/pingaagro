@@ -481,6 +481,157 @@ class AdminController extends Controller
         $this->redirect(URLROOT . '/admin/gallery');
     }
 
+        // ── POST EDITOR MEDIA (Quill image/video toolbar buttons) ─
+    /**
+     * AJAX endpoint used by the Quill editor's image button, "Upload
+     * New" tab. Uploads a single image for use inside post content
+     * and returns its URL as JSON. Separate from the Gallery — this
+     * won't show up on the gallery page, only inside whichever post
+     * it's inserted into.
+     */
+    public function uploadposteditorimage(): void
+    {
+        $this->requireAuth();
+        header('Content-Type: application/json');
+
+        if ($_SERVER['REQUEST_METHOD'] !== 'POST' || empty($_FILES['image']['name'])) {
+            http_response_code(400);
+            echo json_encode(['error' => 'No image received.']);
+            exit;
+        }
+
+        $file    = $_FILES['image'];
+        $maxSize = 5 * 1024 * 1024; // 5MB
+
+        if ($file['error'] !== UPLOAD_ERR_OK) {
+            http_response_code(400);
+            echo json_encode(['error' => 'Upload failed. Please try again.']);
+            exit;
+        }
+
+        if ($file['size'] > $maxSize) {
+            http_response_code(400);
+            echo json_encode(['error' => 'Image must be under 5MB.']);
+            exit;
+        }
+
+        $finfo    = new finfo(FILEINFO_MIME_TYPE);
+        $mimeType = $finfo->file($file['tmp_name']);
+        $allowed  = ['image/jpeg', 'image/png', 'image/webp', 'image/gif'];
+
+        if (!in_array($mimeType, $allowed) || !getimagesize($file['tmp_name'])) {
+            http_response_code(400);
+            echo json_encode(['error' => 'File must be a valid JPG, PNG, WebP, or GIF image.']);
+            exit;
+        }
+
+        $originalName = pathinfo($file['name'], PATHINFO_FILENAME);
+        $ext          = pathinfo($file['name'], PATHINFO_EXTENSION);
+        $safeName     = preg_replace('/[^a-zA-Z0-9_-]/', '-', $originalName);
+        $safeName     = preg_replace('/-+/', '-', strtolower(trim($safeName, '-')));
+        $filename     = $safeName . '-' . time() . '.' . strtolower($ext);
+
+        $uploadDir = BASEPATH . 'public/images/posts/content/';
+        if (!is_dir($uploadDir)) {
+            mkdir($uploadDir, 0755, true);
+        }
+
+        if (!move_uploaded_file($file['tmp_name'], $uploadDir . $filename)) {
+            http_response_code(500);
+            echo json_encode(['error' => 'Image could not be saved. Check folder permissions.']);
+            exit;
+        }
+
+        echo json_encode(['url' => URLROOT . '/images/posts/content/' . $filename]);
+        exit;
+    }
+
+    /**
+     * AJAX endpoint used by the Quill editor's video button, "Upload
+     * File" tab. Saves a self-hosted video and returns its URL.
+     */
+    public function uploadpostvideo(): void
+    {
+        $this->requireAuth();
+        header('Content-Type: application/json');
+
+        if ($_SERVER['REQUEST_METHOD'] !== 'POST' || empty($_FILES['video']['name'])) {
+            http_response_code(400);
+            echo json_encode(['error' => 'No video received.']);
+            exit;
+        }
+
+        $file    = $_FILES['video'];
+        $maxSize = 50 * 1024 * 1024; // 50MB
+
+        if ($file['error'] !== UPLOAD_ERR_OK) {
+            http_response_code(400);
+            echo json_encode(['error' => 'Upload failed. Please try again.']);
+            exit;
+        }
+
+        if ($file['size'] > $maxSize) {
+            http_response_code(400);
+            echo json_encode(['error' => 'Video must be under 50MB.']);
+            exit;
+        }
+
+        $finfo    = new finfo(FILEINFO_MIME_TYPE);
+        $mimeType = $finfo->file($file['tmp_name']);
+        $allowed  = ['video/mp4', 'video/webm'];
+
+        if (!in_array($mimeType, $allowed)) {
+            http_response_code(400);
+            echo json_encode(['error' => 'Video must be MP4 or WebM.']);
+            exit;
+        }
+
+        $originalName = pathinfo($file['name'], PATHINFO_FILENAME);
+        $ext          = pathinfo($file['name'], PATHINFO_EXTENSION);
+        $safeName     = preg_replace('/[^a-zA-Z0-9_-]/', '-', $originalName);
+        $safeName     = preg_replace('/-+/', '-', strtolower(trim($safeName, '-')));
+        $filename     = $safeName . '-' . time() . '.' . strtolower($ext);
+
+        $uploadDir = BASEPATH . 'public/videos/posts/';
+        if (!is_dir($uploadDir)) {
+            mkdir($uploadDir, 0755, true);
+        }
+
+        if (!move_uploaded_file($file['tmp_name'], $uploadDir . $filename)) {
+            http_response_code(500);
+            echo json_encode(['error' => 'Video could not be saved. Check folder permissions.']);
+            exit;
+        }
+
+        echo json_encode(['url' => URLROOT . '/videos/posts/' . $filename]);
+        exit;
+    }
+
+    /**
+     * AJAX endpoint — returns every Gallery image as JSON, so the
+     * post editor's "Choose from Gallery" tab can list and pick one
+     * without a page reload.
+     */
+    public function galleryjson(): void
+    {
+        $this->requireAuth();
+        header('Content-Type: application/json');
+
+        $galleryModel = $this->model('Gallery');
+        $images       = $galleryModel->getImages(200, 0);
+
+        $result = [];
+        foreach ($images as $img) {
+            $result[] = [
+                'url'     => URLROOT . '/images/gallery/' . $img->filename,
+                'caption' => $img->caption ?? '',
+            ];
+        }
+
+        echo json_encode($result);
+        exit;
+    }
+
     // ── ADMIN MANAGEMENT (super admins only) ─────────────────
     public function admins(): void
     {

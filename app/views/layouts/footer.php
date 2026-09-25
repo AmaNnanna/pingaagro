@@ -120,7 +120,7 @@
         <!-- Panel Header -->
         <div class="chat-panel__header">
             <div class="chat-panel__brand">
-                <img src="<?= URLROOT ?>/images/logo.png" alt="Pinga Agro">
+                <img src="<?= URLROOT ?>/images/logo-icon.png" alt="Pinga Agro">
                 <div>
                     <strong>Pinga Agro</strong>
                     <span>We typically reply within 24 hours</span>

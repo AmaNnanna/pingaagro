@@ -79,26 +79,8 @@ class AdminController extends Controller
         ];
 
         // ── Brute force check ──────────────────────────────────
-        $maxAttempts  = 5;
-        $lockoutSecs  = 2 * 60; // 2 minutes
-
-        $attempts  = $_SESSION['login_attempts']     ?? 0;
-        $lastTime  = $_SESSION['last_attempt_time']  ?? 0;
-
-        if ($attempts >= $maxAttempts) {
-            $elapsed = time() - $lastTime;
-            if ($elapsed < $lockoutSecs) {
-                $data['locked']   = true;
-                $data['waitMins'] = ceil(($lockoutSecs - $elapsed) / 60);
-                $this->view('admin/login', $data, 'none');
-                return;
-            } else {
-                // Lockout expired — reset
-                $_SESSION['login_attempts']    = 0;
-                $_SESSION['last_attempt_time'] = 0;
-            }
-        }
-        // ──────────────────────────────────────────────────────
+        $maxAttempts = 5;
+        $lockoutSecs = 2 * 60; // 2 minutes
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             Security::verifyCsrf();
@@ -112,10 +94,19 @@ class AdminController extends Controller
             } else {
                 $user = $this->adminModel->findByEmail($email);
 
+                // ── Brute-force check — tied to the account itself
+                // (stored in the database), not the visitor's session,
+                // so it can't be reset just by clearing cookies.
+                if ($user && !empty($user->locked_until) && strtotime($user->locked_until) > time()) {
+                    $data['locked']   = true;
+                    $data['waitMins'] = (int) ceil((strtotime($user->locked_until) - time()) / 60);
+                    $this->view('admin/login', $data, 'none');
+                    return;
+                }
+
                 if ($user && password_verify($password, $user->password)) {
                     // Success — reset attempts and log in
-                    $_SESSION['login_attempts']    = 0;
-                    $_SESSION['last_attempt_time'] = 0;
+                    $this->adminModel->resetLoginAttempts($user->id);
 
                     session_regenerate_id(true);
                     $_SESSION['admin_logged_in'] = true;
@@ -125,19 +116,25 @@ class AdminController extends Controller
                     $_SESSION['admin_role']      = $user->role ?? 'admin';
                     $_SESSION['last_activity']   = time();
                     $this->redirect(URLROOT . '/admin');
-                } else {
-                    // Failed — increment attempt counter
-                    $_SESSION['login_attempts']    = $attempts + 1;
-                    $_SESSION['last_attempt_time'] = time();
+                } elseif ($user) {
+                    // Wrong password on a real account — count it against
+                    // that account.
+                    $this->adminModel->registerFailedLogin($user->id, $maxAttempts, $lockoutSecs);
 
-                    $remaining = $maxAttempts - ($_SESSION['login_attempts']);
+                    $remaining = $maxAttempts - ($user->failed_attempts + 1);
                     if ($remaining > 0) {
                         $data['error'] = 'Invalid email or password. '
                             . $remaining . ' attempt' . ($remaining === 1 ? '' : 's') . ' remaining.';
                     } else {
-                        $data['error'] = 'Too many failed attempts. '
-                            . 'You are locked out for 2 minutes.';
+                        $data['locked']   = true;
+                        $data['waitMins'] = (int) ceil($lockoutSecs / 60);
+                        $this->view('admin/login', $data, 'none');
+                        return;
                     }
+                } else {
+                    // No account with this email — nothing to lock, and we
+                    // don't reveal whether the email exists.
+                    $data['error'] = 'Invalid email or password.';
                 }
             }
         }
@@ -188,7 +185,7 @@ class AdminController extends Controller
                 'title'          => trim($_POST['title']          ?? ''),
                 'slug'           => trim($_POST['slug']           ?? ''),
                 'excerpt'        => trim($_POST['excerpt']        ?? ''),
-                'body'           => $_POST['body']                ?? '',
+                'body'           => Security::sanitizeHtml($_POST['body'] ?? ''),
                 'category_id'   => (int)($_POST['category_id']  ?? 0),
                 'featured_image' => trim($_POST['featured_image'] ?? ''),
                 'author'         => trim($_POST['author']         ?? 'Pinga Agro Team'),
@@ -236,7 +233,7 @@ class AdminController extends Controller
                 'title'          => trim($_POST['title']          ?? ''),
                 'slug'           => trim($_POST['slug']           ?? ''),
                 'excerpt'        => trim($_POST['excerpt']        ?? ''),
-                'body'           => $_POST['body']                ?? '',
+                'body'           => Security::sanitizeHtml($_POST['body'] ?? ''),
                 'category_id'   => (int)($_POST['category_id']  ?? 0),
                 'featured_image' => trim($_POST['featured_image'] ?? ''),
                 'author'         => trim($_POST['author']         ?? 'Pinga Agro Team'),

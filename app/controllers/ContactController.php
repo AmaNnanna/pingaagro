@@ -121,8 +121,10 @@ class ContactController extends Controller
         $message .= "Reply directly to: " . $data['email'] . "\n";
         $message .= "View in admin: " . URLROOT . "/admin/contacts\n";
 
+        $safeName = Security::stripNewlines($data['fullname']);
+
         $headers  = "From: " . FROM_NAME . " <" . FROM_EMAIL . ">\r\n";
-        $headers .= "Reply-To: " . $data['fullname'] . " <" . $data['email'] . ">\r\n";
+        $headers .= "Reply-To: " . $safeName . " <" . $data['email'] . ">\r\n";
         $headers .= "X-Mailer: PHP/" . phpversion();
 
         // mail() works on live server automatically via cPanel

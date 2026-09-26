@@ -22,6 +22,42 @@ class AdminUser extends Model
     }
 
     /**
+     * Record a failed login attempt for this account, and lock it if
+     * the attempt count has now reached the limit. Tied to the account
+     * (not the visitor's session), so clearing cookies or using a new
+     * browser tab does not reset it.
+     */
+    public function registerFailedLogin(int $id, int $maxAttempts, int $lockoutSeconds): void
+    {
+        $stmt = $this->db->prepare(
+            'UPDATE admin_users SET failed_attempts = failed_attempts + 1 WHERE id = ?'
+        );
+        $stmt->execute([$id]);
+
+        $stmt = $this->db->prepare('SELECT failed_attempts FROM admin_users WHERE id = ?');
+        $stmt->execute([$id]);
+        $attempts = (int) $stmt->fetchColumn();
+
+        if ($attempts >= $maxAttempts) {
+            $lockUntil = date('Y-m-d H:i:s', time() + $lockoutSeconds);
+            $stmt = $this->db->prepare('UPDATE admin_users SET locked_until = ? WHERE id = ?');
+            $stmt->execute([$lockUntil, $id]);
+        }
+    }
+
+    /**
+     * Clear failed-attempt count and any lockout — called on a
+     * successful login.
+     */
+    public function resetLoginAttempts(int $id): void
+    {
+        $stmt = $this->db->prepare(
+            'UPDATE admin_users SET failed_attempts = 0, locked_until = NULL WHERE id = ?'
+        );
+        $stmt->execute([$id]);
+    }
+
+    /**
      * Get dashboard stats in a single efficient query set.
      */
     public function getDashboardStats(): array

@@ -45,6 +45,8 @@
                     <!-- FORM -->
                     <form class="contact-form" action="<?= URLROOT ?>/contact/submit" method="POST" style="margin-top:2rem;">
 
+                        <?= Security::csrfField() ?>
+
                         <div class="form-row">
                             <div class="form-group <?= !empty($errors['fullname']) ? 'form-group--error' : '' ?>">
                                 <label for="fullname">Full Name <span class="required">*</span></label>
@@ -128,7 +130,7 @@
                         <div class="contact-info__icon">📍</div>
                         <div>
                             <h4>Oji River Farm</h4>
-                            <p>Mile 2 Ahani, Oji River LGA,<br>Enugu State, Nigeria</p>
+                            <p>19 Achi Road, Oji River LGA,<br>Enugu State, Nigeria</p>
                         </div>
                     </div>
                     <div class="contact-info__item">
@@ -162,7 +164,7 @@
                 </div> -->
             </div>
 
-            <div class="contact-response">
+            <!-- <div class="contact-response">
                 <h4 style="color:var(--green-dark);margin-bottom:0.75rem;">When to Expect a Reply</h4>
                 <ul class="response-list">
                     <li><span class="dot dot--green"></span> General enquiries — within 24 hours</li>
@@ -170,7 +172,7 @@
                     <li><span class="dot dot--green"></span> Product enquiries — within 12 hours</li>
                     <li><span class="dot dot--gold"></span> Government / Policy — within 48 hours</li>
                 </ul>
-            </div>
+            </div> -->
         </div>
 
     </div>

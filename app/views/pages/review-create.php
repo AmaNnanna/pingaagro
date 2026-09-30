@@ -50,20 +50,19 @@
                         </div>
                     <?php endif; ?>
 
-                    <form action="<?= URLROOT ?>/review/submit"
-                          method="POST"
-                          enctype="multipart/form-data"
-                          style="margin-top:2rem;">
+                    <form action="<?= URLROOT ?>/review/submit" method="POST" enctype="multipart/form-data" style="margin-top:2rem;">
+
+                        <?= Security::csrfField() ?>
 
                         <!-- Name & Designation -->
                         <div class="form-row">
                             <div class="form-group <?= !empty($errors['name']) ? 'form-group--error' : '' ?>">
                                 <label for="name">Full Name <span class="required">*</span></label>
                                 <input type="text"
-                                       id="name"
-                                       name="name"
-                                       placeholder="e.g. Emeka Okafor"
-                                       value="<?= htmlspecialchars($old['name'] ?? '') ?>">
+                                    id="name"
+                                    name="name"
+                                    placeholder="e.g. Emeka Okafor"
+                                    value="<?= htmlspecialchars($old['name'] ?? '') ?>">
                                 <?php if (!empty($errors['name'])): ?>
                                     <span class="form-error"><?= htmlspecialchars($errors['name']) ?></span>
                                 <?php endif; ?>
@@ -74,10 +73,10 @@
                                     <span style="font-weight:400;color:var(--text-muted);">(optional)</span>
                                 </label>
                                 <input type="text"
-                                       id="designation"
-                                       name="designation"
-                                       placeholder="e.g. MD, Sunrise Poultry Farm · Customer · Wholesaler"
-                                       value="<?= htmlspecialchars($old['designation'] ?? '') ?>">
+                                    id="designation"
+                                    name="designation"
+                                    placeholder="e.g. MD, Sunrise Poultry Farm · Customer · Wholesaler"
+                                    value="<?= htmlspecialchars($old['designation'] ?? '') ?>">
                             </div>
                         </div>
 
@@ -85,9 +84,9 @@
                         <div class="form-group <?= !empty($errors['review']) ? 'form-group--error' : '' ?>">
                             <label for="review">Your Review <span class="required">*</span></label>
                             <textarea id="review"
-                                      name="review"
-                                      rows="6"
-                                      placeholder="Tell us about your experience — the quality of the products, the service, or anything else you'd like to share…"><?= htmlspecialchars($old['review'] ?? '') ?></textarea>
+                                name="review"
+                                rows="6"
+                                placeholder="Tell us about your experience — the quality of the products, the service, or anything else you'd like to share…"><?= htmlspecialchars($old['review'] ?? '') ?></textarea>
                             <?php if (!empty($errors['review'])): ?>
                                 <span class="form-error"><?= htmlspecialchars($errors['review']) ?></span>
                             <?php endif; ?>
@@ -101,10 +100,10 @@
                             </label>
                             <div class="file-upload-wrap">
                                 <input type="file"
-                                       id="image"
-                                       name="image"
-                                       accept="image/jpeg,image/png,image/webp"
-                                       class="file-upload-input">
+                                    id="image"
+                                    name="image"
+                                    accept="image/jpeg,image/png,image/webp"
+                                    class="file-upload-input">
                                 <label for="image" class="file-upload-label">
                                     <span class="file-upload-icon">📷</span>
                                     <span class="file-upload-text">Click to upload a photo</span>
@@ -118,8 +117,8 @@
                         </div>
 
                         <button type="submit"
-                                class="btn btn-primary"
-                                style="width:100%;justify-content:center;padding:1rem;margin-top:0.5rem;">
+                            class="btn btn-primary"
+                            style="width:100%;justify-content:center;padding:1rem;margin-top:0.5rem;">
                             Submit My Review
                         </button>
 
@@ -168,9 +167,9 @@
 </section>
 
 <script>
-// Show selected filename in the upload label
-document.getElementById('image').addEventListener('change', function () {
-    const name = this.files[0] ? this.files[0].name : 'No file chosen';
-    document.getElementById('fileName').textContent = name;
-});
+    // Show selected filename in the upload label
+    document.getElementById('image').addEventListener('change', function() {
+        const name = this.files[0] ? this.files[0].name : 'No file chosen';
+        document.getElementById('fileName').textContent = name;
+    });
 </script>
